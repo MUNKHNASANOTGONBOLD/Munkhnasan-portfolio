@@ -147,20 +147,33 @@ export default function Home() {
 
       {/* Hero / Statement of Standing */}
       <section id="standing" className="mx-auto max-w-5xl px-6 pt-16 pb-12">
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-gold mb-4">
-          Statement of Professional Standing
-        </p>
-        <h1 className="font-serif text-5xl sm:text-6xl font-semibold text-navy leading-[1.05] mb-6">
-          Munkhnasan
-          <br />
-          Otgonbold
-        </h1>
-        <p className="max-w-2xl text-lg text-ink/80 leading-relaxed">
-          Data Analyst with 5+ years across financial services, lending, and government
-          finance — building Power BI and Tableau solutions, maintaining data governance
-          and metadata frameworks, and turning complex lending and financial data into
-          governance-ready insight. Completing an M.S. in Data Analytics, GPA 3.90.
-        </p>
+        <div className="grid sm:grid-cols-[1fr_auto] gap-8 items-start">
+          <div>
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-gold mb-4">
+              Statement of Professional Standing
+            </p>
+            <h1 className="font-serif text-5xl sm:text-6xl font-semibold text-navy leading-[1.05] mb-6">
+              Munkhnasan
+              <br />
+              Otgonbold
+            </h1>
+            <p className="max-w-2xl text-lg text-ink/80 leading-relaxed">
+              Data Analyst with 5+ years across financial services, lending, and government
+              finance — building Power BI and Tableau solutions, maintaining data governance
+              and metadata frameworks, and turning complex lending and financial data into
+              governance-ready insight. Completing an M.S. in Data Analytics, GPA 3.90.
+            </p>
+          </div>
+          <div className="w-32 h-32 sm:w-40 sm:h-40 border-2 border-navy shrink-0 relative overflow-hidden bg-paper2">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/headshot.jpg"
+              alt="Munkhnasan Otgonbold"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
         <div className="mt-8 flex flex-wrap gap-3">
           <a
             href="#contact"
@@ -173,6 +186,18 @@ export default function Home() {
             className="inline-flex items-center border border-navy text-navy font-mono text-xs uppercase tracking-wider px-5 py-3 hover:bg-navy/5 transition-colors"
           >
             View Ledger
+          </a>
+          <a
+            href="/Munkhnasan-Otgonbold-Resume.pdf"
+            download
+            className="inline-flex items-center gap-2 border border-gold text-gold font-mono text-xs uppercase tracking-wider px-5 py-3 hover:bg-gold/10 transition-colors"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            Download Resume
           </a>
         </div>
       </section>
