@@ -1,4 +1,4 @@
-# Mason Otgonbold — Portfolio
+# Munkhnasan Otgonbold — Portfolio
 
 Next.js 14 (App Router) + Tailwind CSS. Single-page "financial ledger" themed portfolio.
 
