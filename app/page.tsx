@@ -2,9 +2,10 @@ const NAV = [
   { href: "#standing", label: "01 · Standing" },
   { href: "#account", label: "02 · Account Summary" },
   { href: "#ledger", label: "03 · Experience" },
-  { href: "#holdings", label: "04 · Skills" },
-  { href: "#instruments", label: "05 · Education" },
-  { href: "#contact", label: "06 · Contact" },
+  { href: "#projects", label: "04 · Projects" },
+  { href: "#holdings", label: "05 · Skills" },
+  { href: "#instruments", label: "06 · Education" },
+  { href: "#contact", label: "07 · Contact" },
 ];
 
 const METRICS = [
@@ -84,6 +85,41 @@ const LEDGER: LedgerEntry[] = [
     lines: [
       "Managed budgeting, forecasting, and lending analysis with financial reporting.",
     ],
+  },
+];
+
+type ProjectEntry = {
+  period: string;
+  title: string;
+  blurb: string;
+  tags: string[];
+  href: string;
+};
+
+const PROJECTS: ProjectEntry[] = [
+  {
+    period: "Dec 2025",
+    title: "The SBA Loans I Wrote at a Coffee Shop — 249,000 Rows Later",
+    blurb:
+      "Cleaned, mapped, and analyzed 249,000+ real SBA 7(a) loan records via Excel → SSIS → SQL Server → Tableau, then wrote up the full story on LinkedIn.",
+    tags: ["SQL Server", "SSIS", "Tableau", "Excel"],
+    href: "https://www.linkedin.com/pulse/sba-loans-i-wrote-coffee-shop-ended-249000-rows-munkhnasan-otgonbold-yg8te/",
+  },
+  {
+    period: "Nov 2025",
+    title: "The Other Side of the Ledger: What Customer Data Looks Like",
+    blurb:
+      "Full EDA-to-visualization pipeline on 5,002 messy finance transactions — discovery, cleaning, standardization, feature engineering, and reporting in Python.",
+    tags: ["Python", "pandas", "NumPy", "Matplotlib"],
+    href: "https://www.linkedin.com/pulse/other-side-ledger-what-customer-data-looks-like-munkhnasan-otgonbold-1kste/",
+  },
+  {
+    period: "2025",
+    title: "The Hidden Cost of Healthcare Billing",
+    blurb:
+      "Multi-layer data pipeline analyzing claim denial rates and provider performance, built in Snowflake with a Tableau dashboard layer.",
+    tags: ["SQL", "Snowflake", "Tableau"],
+    href: "https://www.linkedin.com/feed/update/urn:li:activity:7491556304545697794/",
   },
 ];
 
@@ -268,10 +304,47 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Projects */}
+      <section id="projects" className="mx-auto max-w-5xl px-6 py-14">
+        <p className="font-mono text-xs uppercase tracking-[0.2em] text-navy/70 mb-6">
+          04 · Statements — Projects
+        </p>
+        <div className="grid sm:grid-cols-3 gap-6">
+          {PROJECTS.map((p) => (
+            <a
+              key={p.title}
+              href={p.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block border border-rule p-5 bg-paper2 hover:border-navy transition-colors"
+            >
+              <div className="font-mono text-xs text-ink/50 tabular mb-2">{p.period}</div>
+              <h3 className="font-serif text-lg text-navy font-semibold leading-snug mb-2 group-hover:underline">
+                {p.title}
+              </h3>
+              <p className="text-sm text-ink/75 leading-relaxed mb-4">{p.blurb}</p>
+              <div className="flex flex-wrap gap-1.5 mb-3">
+                {p.tags.map((t) => (
+                  <span
+                    key={t}
+                    className="font-mono text-[10px] uppercase tracking-wide px-2 py-1 border border-rule text-ink/60"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+              <span className="font-mono text-xs text-gold group-hover:underline">
+                Read on LinkedIn →
+              </span>
+            </a>
+          ))}
+        </div>
+      </section>
+
       {/* Holdings — skills */}
       <section id="holdings" className="mx-auto max-w-5xl px-6 py-14">
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-navy/70 mb-6">
-          04 · Holdings — Skills
+          05 · Holdings — Skills
         </p>
         <div className="grid sm:grid-cols-2 gap-x-10 gap-y-8">
           {SKILLS.map((s) => (
@@ -295,7 +368,7 @@ export default function Home() {
       {/* Instruments — education & certifications */}
       <section id="instruments" className="mx-auto max-w-5xl px-6 py-14">
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-navy/70 mb-6">
-          05 · Instruments — Education &amp; Certifications
+          06 · Instruments — Education &amp; Certifications
         </p>
         <div className="grid sm:grid-cols-2 gap-10">
           <div>
@@ -331,7 +404,7 @@ export default function Home() {
       {/* Contact / footer */}
       <section id="contact" className="mx-auto max-w-5xl px-6 py-16">
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-navy/70 mb-6">
-          06 · Contact
+          07 · Contact
         </p>
         <div className="grid sm:grid-cols-[1fr_auto] items-end gap-8">
           <div>
