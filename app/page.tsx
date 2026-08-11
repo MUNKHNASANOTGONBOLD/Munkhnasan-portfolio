@@ -174,9 +174,9 @@ const EDUCATION = [
 ];
 
 const CERTS = [
-  "Google Data Analytics Certification",
-  "Tableau Data Analyst Training",
-  "SQL Advanced Querying & Data Analytics",
+  { name: "Microsoft Power BI (PowerBI Consultant)", org: "Credential ID PBIMON00000104", date: "Sep 2023" },
+  { name: "Tableau Desktop I, II", org: "Novelsoft", date: "Oct 2023" },
+  { name: "Project Management", org: "Ganzorig Business School", date: "Sep 2022" },
 ];
 
 function LedgerRule() {
@@ -417,11 +417,16 @@ export default function Home() {
           </div>
           <div>
             <h4 className="font-serif text-navy font-semibold mb-4">Certifications</h4>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               {CERTS.map((c) => (
-                <li key={c} className="text-sm text-ink/80 flex gap-2">
+                <li key={c.name} className="text-sm text-ink/80 flex gap-2">
                   <span className="text-gold shrink-0">—</span>
-                  <span>{c}</span>
+                  <span>
+                    {c.name}
+                    <span className="block font-mono text-xs text-ink/50 mt-0.5">
+                      {c.org} · {c.date}
+                    </span>
+                  </span>
                 </li>
               ))}
             </ul>
