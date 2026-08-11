@@ -219,10 +219,10 @@ export default function Home() {
               Otgonbold
             </h1>
             <p className="max-w-2xl text-lg text-ink/80 leading-relaxed">
-              Data Analyst with 5+ years across financial services, lending, and government
-              finance — building Power BI and Tableau solutions, maintaining data governance
-              and metadata frameworks, and turning complex lending and financial data into
-              governance-ready insight. Completing an M.S. in Data Analytics, GPA 3.90.
+              Data Analyst with 5+ years across financial services, private businesses, and
+              government — building Power BI and Tableau solutions, maintaining data governance
+              and metadata frameworks, and turning complex data into governance-ready insight.
+              Completing an M.S. in Data Analytics, GPA 3.90.
             </p>
           </div>
           <div className="w-32 h-32 sm:w-40 sm:h-40 border-2 border-navy shrink-0 relative overflow-hidden bg-paper2">
