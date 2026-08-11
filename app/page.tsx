@@ -10,7 +10,7 @@ const NAV = [
 
 const METRICS = [
   { label: "Financing supported", value: "$850M+", note: "ADB · EBRD · IFC · bond issuances" },
-  { label: "Client financing secured", value: "$15M+", note: "300+ business & funding proposals" },
+  { label: "Client financing secured", value: "$50M+", note: "300+ business & funding proposals" },
   { label: "Graduate GPA", value: "3.90", note: "M.S. Data Analytics, exp. 2027" },
   { label: "Experience", value: "5+ yrs", note: "Financial services, lending & BI" },
 ];
@@ -27,12 +27,12 @@ const LEDGER: LedgerEntry[] = [
   {
     period: "Jan 2026 — May 2026",
     role: "Data Analyst Intern",
-    org: "MDThink — State of Maryland (cSMS)",
+    org: "MDThink — State of Maryland",
     type: "Internship",
     lines: [
-      "Built Power BI and Tableau dashboards, applying data governance frameworks for audit-ready reporting.",
-      "Maintained metadata, data dictionaries, and data catalog documentation; performed profiling and reconciliation across source, staging, and reporting layers.",
-      "Supported big-data and data-science initiatives with SQL and Python across AWS (Athena, Redshift, Glue).",
+      "Validated and reconciled large healthcare datasets across multiple Medicaid reporting environments; built advanced SQL (CTEs, window functions) for reporting extracts and root-cause analysis.",
+      "Designed validation frameworks — control totals, variance analysis, duplicate checks, row-level reconciliation — and prepared analytics-ready curated datasets for KPI dashboards.",
+      "Worked in AWS (Redshift, Athena, Glue) under HIPAA and audit-readiness requirements.",
     ],
   },
   {
@@ -41,49 +41,61 @@ const LEDGER: LedgerEntry[] = [
     org: "Index Analytics",
     type: "Internship",
     lines: [
-      "Developed Power BI semantic models (100+ DAX measures, RLS) and Tableau dashboards.",
-      "Implemented data quality controls and governance processes; used SQL and Python for big-data reporting.",
-      "Mentored junior analysts on reporting best practices and validation procedures.",
+      "Designed and developed enterprise BI dashboards in Power BI and Tableau, including semantic models with 100+ DAX measures.",
+      "Implemented Row-Level Security (RLS) for governance and secure reporting access; validated production reporting datasets via reconciliation and exception analysis.",
+      "Built Python/SQL/Unix Shell automation scripts and worked with Git and Azure DevOps CI/CD pipelines to improve reporting efficiency and reduce manual effort.",
     ],
   },
   {
     period: "Jun 2025 — Sep 2025",
     role: "Data Analyst Intern",
-    org: "Trustco Bank",
+    org: "Trustco Bank — USA",
     type: "Internship",
     lines: [
-      "Analyzed financial services and lending data for banking operations, compliance, and KPI monitoring.",
-      "Built Power BI and Tableau dashboards; validated and reconciled financial data against governance standards.",
+      "Analyzed financial and risk datasets supporting banking operations, compliance reporting, and business analytics initiatives.",
+      "Built Tableau dashboards for KPI reporting and operational monitoring; supported audit and regulatory processes through data validation and reconciliation.",
     ],
   },
   {
-    period: "Apr 2022 — Jun 2025",
-    role: "Budget & Debt Analyst",
-    org: "Governor's Office of the Capital City — Mongolia",
+    period: "Feb 2024 — Jun 2025",
+    role: "Debt Analyst",
+    org: "Governor's Office of the Capital City — Ulaanbaatar",
     type: "Full-time",
     lines: [
-      "Contributed to financing exceeding $850M: $95M ADB loan, $25M EBRD loan, $500M foreign bond, $160M domestic bond, $87.2M IFC-related issuance.",
-      "Collaborated with ADB, EBRD, IFC, and global investors on lending and bond financing.",
-      "Best Employee, 2024.",
+      "Analyzed the Capital City's debt portfolio, financing structure, borrowing capacity, and repayment obligations to support long-term fiscal planning.",
+      "Prepared financial models, debt repayment schedules, cash flow projections, and debt sustainability analyses for large-scale public investment projects.",
+      "Contributed to financing exceeding $850M — including a $95M ADB loan, $25M EBRD loan, $500M foreign bond, ₮500B domestic bond, and $87.2M IFC-related issuance — collaborating directly with ADB, EBRD, IFC, and the World Bank.",
     ],
   },
   {
-    period: "Jul 2022 — Jul 2025",
-    role: "Senior Financial Analyst",
-    org: "Time Power Rich LLC — Mongolia",
+    period: "Jan 2021 — Jun 2025",
+    role: "Financial Analyst",
+    org: "Time Power Rich — Mongolia",
     type: "Full-time",
     lines: [
-      "Financial modeling, ROI analysis, and risk assessment across 300+ business and funding proposals.",
-      "Helped client SMEs secure over $15M in approved financing. Best Employee, 2023.",
+      "Analyzed financial, business, and market data to support investment proposals and funding decisions for small and medium-sized enterprises.",
+      "Prepared 300+ business and funding proposals, helping client companies secure over $50M in approved financing.",
+      "Built financial models, cash flow projections, repayment schedules, and investment analysis reports evaluating project sustainability.",
+    ],
+  },
+  {
+    period: "Apr 2022 — Feb 2024",
+    role: "Budget Analyst",
+    org: "Governor's Office of the Capital City — Ulaanbaatar",
+    type: "Full-time",
+    lines: [
+      "Managed city budget planning, expenditure analysis, and fiscal reporting activities; developed annual and mid-term financial plans supporting government budgeting initiatives.",
+      "Presented budget proposals and expenditure analysis reports to government stakeholders and leadership teams, supporting the approval of annual and mid-term city budgets (2022–2024).",
     ],
   },
   {
     period: "Apr 2021 — Apr 2022",
-    role: "Financial Manager / Analyst",
+    role: "Financial Analyst",
     org: "NAMO LLC — Mongolia",
     type: "Full-time",
     lines: [
-      "Managed budgeting, forecasting, and lending analysis with financial reporting.",
+      "Managed budgeting, forecasting, investment analysis, and cost control reporting.",
+      "Developed business plans, investment proposals, and operational financial reports; conducted ROI and financial risk assessments.",
     ],
   },
 ];
@@ -94,9 +106,19 @@ type ProjectEntry = {
   blurb: string;
   tags: string[];
   href: string;
+  image: string;
 };
 
 const PROJECTS: ProjectEntry[] = [
+  {
+    period: "Jan 2026",
+    title: "The Anatomy of a World Bank Loan",
+    blurb:
+      "Cleaned and modeled the World Bank's public IDA portfolio — 11,404 credits/grants across 131 countries — into a Power BI star schema and an interactive dashboard.",
+    tags: ["Python", "Power BI", "DAX"],
+    href: "https://www.linkedin.com/pulse/anatomy-world-bank-loan-munkhnasan-otgonbold-9ilee/",
+    image: "/projects/worldbank.svg",
+  },
   {
     period: "Dec 2025",
     title: "The SBA Loans I Wrote at a Coffee Shop — 249,000 Rows Later",
@@ -104,6 +126,7 @@ const PROJECTS: ProjectEntry[] = [
       "Cleaned, mapped, and analyzed 249,000+ real SBA 7(a) loan records via Excel → SSIS → SQL Server → Tableau, then wrote up the full story on LinkedIn.",
     tags: ["SQL Server", "SSIS", "Tableau", "Excel"],
     href: "https://www.linkedin.com/pulse/sba-loans-i-wrote-coffee-shop-ended-249000-rows-munkhnasan-otgonbold-yg8te/",
+    image: "/projects/sba.svg",
   },
   {
     period: "Nov 2025",
@@ -112,6 +135,7 @@ const PROJECTS: ProjectEntry[] = [
       "Full EDA-to-visualization pipeline on 5,002 messy finance transactions — discovery, cleaning, standardization, feature engineering, and reporting in Python.",
     tags: ["Python", "pandas", "NumPy", "Matplotlib"],
     href: "https://www.linkedin.com/pulse/other-side-ledger-what-customer-data-looks-like-munkhnasan-otgonbold-1kste/",
+    image: "/projects/ledger.svg",
   },
   {
     period: "2025",
@@ -119,7 +143,8 @@ const PROJECTS: ProjectEntry[] = [
     blurb:
       "Multi-layer data pipeline analyzing claim denial rates and provider performance, built in Snowflake with a Tableau dashboard layer.",
     tags: ["SQL", "Snowflake", "Tableau"],
-    href: "https://www.linkedin.com/feed/update/urn:li:activity:7491556304545697794/",
+    href: "https://www.linkedin.com/pulse/hidden-cost-healthcare-billing-munkhnasan-otgonbold-zlrce/",
+    image: "/projects/healthcare.svg",
   },
 ];
 
@@ -309,33 +334,40 @@ export default function Home() {
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-navy/70 mb-6">
           04 · Statements — Projects
         </p>
-        <div className="grid sm:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 gap-6">
           {PROJECTS.map((p) => (
             <a
               key={p.title}
               href={p.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group block border border-rule p-5 bg-paper2 hover:border-navy transition-colors"
+              className="group block border border-rule bg-paper2 hover:border-navy transition-colors overflow-hidden"
             >
-              <div className="font-mono text-xs text-ink/50 tabular mb-2">{p.period}</div>
-              <h3 className="font-serif text-lg text-navy font-semibold leading-snug mb-2 group-hover:underline">
-                {p.title}
-              </h3>
-              <p className="text-sm text-ink/75 leading-relaxed mb-4">{p.blurb}</p>
-              <div className="flex flex-wrap gap-1.5 mb-3">
-                {p.tags.map((t) => (
-                  <span
-                    key={t}
-                    className="font-mono text-[10px] uppercase tracking-wide px-2 py-1 border border-rule text-ink/60"
-                  >
-                    {t}
-                  </span>
-                ))}
+              <img
+                src={p.image}
+                alt={p.title}
+                className="w-full h-40 object-cover border-b border-rule"
+              />
+              <div className="p-5">
+                <div className="font-mono text-xs text-ink/50 tabular mb-2">{p.period}</div>
+                <h3 className="font-serif text-lg text-navy font-semibold leading-snug mb-2 group-hover:underline">
+                  {p.title}
+                </h3>
+                <p className="text-sm text-ink/75 leading-relaxed mb-4">{p.blurb}</p>
+                <div className="flex flex-wrap gap-1.5 mb-3">
+                  {p.tags.map((t) => (
+                    <span
+                      key={t}
+                      className="font-mono text-[10px] uppercase tracking-wide px-2 py-1 border border-rule text-ink/60"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+                <span className="font-mono text-xs text-gold group-hover:underline">
+                  Read on LinkedIn →
+                </span>
               </div>
-              <span className="font-mono text-xs text-gold group-hover:underline">
-                Read on LinkedIn →
-              </span>
             </a>
           ))}
         </div>

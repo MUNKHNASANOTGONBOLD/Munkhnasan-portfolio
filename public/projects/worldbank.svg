@@ -1,0 +1,25 @@
+<svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B2E4A"/>
+      <stop offset="100%" stop-color="#164B6E"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="220" fill="url(#g4)"/>
+  <g opacity="0.12">
+    <circle cx="30" cy="30" r="70" fill="#5FCFC7"/>
+    <circle cx="370" cy="200" r="80" fill="#C8963E"/>
+  </g>
+  <!-- globe icon -->
+  <g transform="translate(58,105)" fill="none" stroke="#C8963E" stroke-width="2.5">
+    <circle r="32"/>
+    <ellipse rx="14" ry="32"/>
+    <line x1="-32" y1="0" x2="32" y2="0"/>
+    <path d="M -28 -16 Q 0 -8 28 -16"/>
+    <path d="M -28 16 Q 0 8 28 16"/>
+  </g>
+  <text x="48" y="58" font-family="Georgia, serif" font-size="20" font-weight="700" fill="#F4F1EA">The Anatomy</text>
+  <text x="48" y="82" font-family="Georgia, serif" font-size="20" font-weight="700" fill="#F4F1EA">of a World</text>
+  <text x="48" y="106" font-family="Georgia, serif" font-size="20" font-weight="700" fill="#F4F1EA">Bank Loan</text>
+  <text x="48" y="185" font-family="Arial, sans-serif" font-size="12" letter-spacing="1.5" fill="#8FC4D9">$632B, 131 COUNTRIES</text>
+</svg>
