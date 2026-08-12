@@ -9,10 +9,10 @@ const NAV = [
 ];
 
 const METRICS = [
-  { label: "Financing supported", value: "$850M+", note: "ADB · EBRD · IFC · bond issuances" },
-  { label: "Client financing secured", value: "$50M+", note: "300+ business & funding proposals" },
-  { label: "Graduate GPA", value: "3.90", note: "M.S. Data Analytics, exp. 2027" },
-  { label: "Experience", value: "5+ yrs", note: "Financial services, lending & BI" },
+  { label: "Financing supported", value: "$850M+", note: "ADB · EBRD · IFC · World Bank bond and lending issuance" },
+  { label: "Client financing secured", value: "$15M+", note: "300+ business & funding proposals" },
+  { label: "Graduate GPA", value: "3.92", note: "M.S. Data Analytics, exp. 2027" },
+  { label: "Experience", value: "5+ yrs", note: "Financial services, private businesses, and government organization data analysis" },
 ];
 
 type LedgerEntry = {
@@ -30,9 +30,12 @@ const LEDGER: LedgerEntry[] = [
     org: "MDThink — State of Maryland",
     type: "Internship",
     lines: [
-      "Validated and reconciled large healthcare datasets across multiple Medicaid reporting environments; built advanced SQL (CTEs, window functions) for reporting extracts and root-cause analysis.",
-      "Designed validation frameworks — control totals, variance analysis, duplicate checks, row-level reconciliation — and prepared analytics-ready curated datasets for KPI dashboards.",
-      "Worked in AWS (Redshift, Athena, Glue) under HIPAA and audit-readiness requirements.",
+      "Supported Medicaid analytics and enterprise reporting by validating and reconciling large healthcare datasets across multiple reporting environments.",
+      "Developed advanced SQL queries using joins, CTEs, subqueries, and window functions for reporting extracts, reconciliation logic, and validation analysis.",
+      "Performed source-to-target data mapping, data profiling, and data quality assessments ensuring completeness, consistency, and reporting accuracy.",
+      "Designed and executed validation frameworks including control totals, variance analysis, duplicate checks, and row-level reconciliation.",
+      "Conducted root cause analysis to identify and resolve reporting discrepancies, improving reliability of healthcare reporting datasets.",
+      "Validated datasets in AWS cloud environments including Redshift, Athena, and Glue under HIPAA compliance and audit-readiness requirements.",
     ],
   },
   {
@@ -41,9 +44,12 @@ const LEDGER: LedgerEntry[] = [
     org: "Index Analytics",
     type: "Internship",
     lines: [
-      "Designed and developed enterprise BI dashboards in Power BI and Tableau, including semantic models with 100+ DAX measures.",
-      "Implemented Row-Level Security (RLS) for governance and secure reporting access; validated production reporting datasets via reconciliation and exception analysis.",
-      "Built Python/SQL/Unix Shell automation scripts and worked with Git and Azure DevOps CI/CD pipelines to improve reporting efficiency and reduce manual effort.",
+      "Designed and developed enterprise BI dashboards using Power BI and Tableau supporting operational reporting and executive decision-making.",
+      "Built advanced Power BI semantic models with 100+ DAX measures supporting enterprise analytics initiatives.",
+      "Implemented Row-Level Security (RLS) to strengthen governance, secure reporting access, and maintain compliance standards.",
+      "Validated production reporting datasets and conducted detailed reconciliation, exception analysis, and data quality checks.",
+      "Contributed to data warehouse design, Oracle data modeling, and reporting modernization initiatives.",
+      "Developed automation scripts using Python, SQL, and Unix Shell scripting; worked with Git and Azure DevOps CI/CD pipelines supporting deployment and reporting lifecycle management.",
     ],
   },
   {
@@ -53,7 +59,9 @@ const LEDGER: LedgerEntry[] = [
     type: "Internship",
     lines: [
       "Analyzed financial and risk datasets supporting banking operations, compliance reporting, and business analytics initiatives.",
-      "Built Tableau dashboards for KPI reporting and operational monitoring; supported audit and regulatory processes through data validation and reconciliation.",
+      "Developed and automated reporting logic improving reporting consistency and operational efficiency.",
+      "Built Tableau dashboards for KPI reporting, operational monitoring, and performance tracking.",
+      "Supported audit and regulatory reporting processes through data validation, reconciliation, and financial data integrity activities.",
     ],
   },
   {
@@ -62,9 +70,11 @@ const LEDGER: LedgerEntry[] = [
     org: "Governor's Office of the Capital City — Ulaanbaatar",
     type: "Full-time",
     lines: [
-      "Analyzed the Capital City's debt portfolio, financing structure, borrowing capacity, and repayment obligations to support long-term fiscal planning.",
-      "Prepared financial models, debt repayment schedules, cash flow projections, and debt sustainability analyses for large-scale public investment projects.",
-      "Contributed to financing exceeding $850M — including a $95M ADB loan, $25M EBRD loan, $500M foreign bond, ₮500B domestic bond, and $87.2M IFC-related issuance — collaborating directly with ADB, EBRD, IFC, and the World Bank.",
+      "Analyzed the Capital City's debt portfolio, financing structure, borrowing capacity, repayment obligations, and fiscal impact to support long-term financial planning and investment decisions.",
+      "Prepared financial models, debt repayment schedules, cash flow projections, funding scenarios, and analytical reports for large-scale public investment and infrastructure projects.",
+      "Conducted debt sustainability analysis, financial risk assessment, compliance review, and repayment capacity analysis for domestic and international borrowing initiatives.",
+      "Collaborated with ADB, EBRD, IFC, World Bank, global investors, and domestic financial institutions to support project financing, funding negotiations, and strategic infrastructure development.",
+      "Contributed to financing initiatives including a $95M ADB loan, $25M EBRD loan, $500M foreign bond issuance, ₮500B domestic bond issuance, and $87.2M IFC-related bond issuance.",
     ],
   },
   {
@@ -73,9 +83,11 @@ const LEDGER: LedgerEntry[] = [
     org: "Time Power Rich — Mongolia",
     type: "Full-time",
     lines: [
-      "Analyzed financial, business, and market data to support investment proposals and funding decisions for small and medium-sized enterprises.",
-      "Prepared 300+ business and funding proposals, helping client companies secure over $50M in approved financing.",
-      "Built financial models, cash flow projections, repayment schedules, and investment analysis reports evaluating project sustainability.",
+      "Analyzed financial, business, and market data to support investment proposals, project planning, and funding decisions for small and medium-sized enterprises.",
+      "Prepared 300+ business and funding proposals, helping client companies secure over ₮50 billion in approved financing.",
+      "Conducted financial feasibility studies, ROI analysis, revenue forecasting, cost analysis, and profitability assessments.",
+      "Built financial models, cash flow projections, repayment schedules, and investment analysis reports to evaluate project sustainability.",
+      "Identified financial risks, funding gaps, and cost drivers to support better investment and lending decisions.",
     ],
   },
   {
@@ -85,7 +97,8 @@ const LEDGER: LedgerEntry[] = [
     type: "Full-time",
     lines: [
       "Managed city budget planning, expenditure analysis, and fiscal reporting activities; developed annual and mid-term financial plans supporting government budgeting initiatives.",
-      "Presented budget proposals and expenditure analysis reports to government stakeholders and leadership teams, supporting the approval of annual and mid-term city budgets (2022–2024).",
+      "Presented budget proposals and expenditure analysis reports to government stakeholders and leadership teams, supporting approval of annual and mid-term city budgets (2022–2024).",
+      "Ensured adherence to fiscal compliance standards and reporting requirements.",
     ],
   },
   {
@@ -95,7 +108,8 @@ const LEDGER: LedgerEntry[] = [
     type: "Full-time",
     lines: [
       "Managed budgeting, forecasting, investment analysis, and cost control reporting.",
-      "Developed business plans, investment proposals, and operational financial reports; conducted ROI and financial risk assessments.",
+      "Developed business plans, investment proposals, and operational financial reports.",
+      "Conducted ROI analysis and financial risk assessments supporting business operations.",
     ],
   },
 ];
@@ -177,13 +191,16 @@ const SKILLS = [
 ];
 
 const EDUCATION = [
-  { degree: "M.S. Data Analytics", org: "University of the Potomac", note: "Expected 2027 · GPA 3.90" },
-  { degree: "MBA, Project Management", org: "Finance and Economy University", note: "Graduated" },
-  { degree: "BBA, Banking & Finance", org: "National University of Mongolia", note: "Best Graduate, 2021" },
+  { degree: "M.S. Data Analytics", org: "University of the Potomac", note: "Expected 2027 · GPA 3.92" },
+  { degree: "MBA, Project Management", org: "University of Finance and Economics", note: "2021–2022 · GPA 3.6" },
+  { degree: "Bachelor's Degree, Finance", org: "National University of Mongolia", note: "Sep 2017 – Jun 2021 · Best Graduate" },
 ];
 
 const CERTS = [
-  { name: "Microsoft Power BI (PowerBI Consultant)", org: "Credential ID PBIMON00000104", date: "Sep 2023" },
+  { name: "Python", org: "Tech2high", date: "Aug 2025" },
+  { name: "SQL Advanced Querying & Data Analytics", org: "Tech2high", date: "Aug 2025" },
+  { name: "City Finance — World Bank Group", org: "The World Bank Group", date: "Apr 2025" },
+  { name: "Microsoft Power BI", org: "PowerBI Consultant · ID PBIMON00000104", date: "Sep 2023" },
   { name: "Tableau Desktop I, II", org: "Novelsoft", date: "Oct 2023" },
   { name: "Project Management", org: "Ganzorig Business School", date: "Sep 2022" },
 ];
@@ -222,16 +239,49 @@ export default function Home() {
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-gold mb-4">
               Statement of Professional Standing
             </p>
-            <h1 className="font-serif text-5xl sm:text-6xl font-semibold text-navy leading-[1.05] mb-6">
+            <h1 className="font-serif text-5xl sm:text-6xl font-semibold text-navy leading-[1.05] mb-4">
               Munkhnasan
               <br />
               Otgonbold
             </h1>
+            <div className="flex gap-3 mb-6">
+              <a
+                href="https://www.linkedin.com/in/munkhnasan-otgonbold-b319b6161"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="w-9 h-9 rounded-lg bg-ink text-paper flex items-center justify-center hover:bg-navy transition-colors"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+              </a>
+              <a
+                href="https://github.com/MUNKHNASANOTGONBOLD"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                className="w-9 h-9 rounded-lg bg-ink text-paper flex items-center justify-center hover:bg-navy transition-colors"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path fillRule="evenodd" clipRule="evenodd" d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.11.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.043-1.61-4.043-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.238 1.84 1.238 1.07 1.834 2.809 1.304 3.495.997.108-.775.42-1.305.763-1.605-2.665-.303-5.467-1.333-5.467-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 0 1 3.003-.404c1.02.005 2.047.138 3.003.404 2.291-1.552 3.297-1.23 3.297-1.23.655 1.652.243 2.873.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576C20.565 21.796 24 17.298 24 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+              </a>
+              <a
+                href="mailto:munkhnasanotgonbold92@gmail.com"
+                aria-label="Gmail"
+                className="w-9 h-9 rounded-lg bg-ink text-paper flex items-center justify-center hover:bg-navy transition-colors"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M2 4h20v16H2V4zm2 2v.01L12 12l8-5.99V6H4zm16 12V8.24l-8 6-8-6V18h16z"/>
+                </svg>
+              </a>
+            </div>
             <p className="max-w-2xl text-lg text-ink/80 leading-relaxed">
-              Data Analyst with 5+ years across financial services, private businesses, and
-              government — building Power BI and Tableau solutions, maintaining data governance
-              and metadata frameworks, and turning complex data into governance-ready insight.
-              Completing an M.S. in Data Analytics, GPA 3.90.
+              Data Analyst with 5+ years across institutional finance, private business, and
+              government organization — building Power BI, Tableau dashboards for finance and
+              portfolio reporting, applying AI-enabled data quality workflows, and turning complex
+              datasets into decision-ready insight. Completing an M.S. in Data Analytics, GPA 3.92.
             </p>
           </div>
           <div className="w-32 h-32 sm:w-40 sm:h-40 border-2 border-navy shrink-0 relative overflow-hidden bg-paper2">
@@ -294,6 +344,30 @@ export default function Home() {
               </div>
               <div className="text-sm text-ink/70">{m.label}</div>
               <div className="text-xs text-ink/45 mt-1">{m.note}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Skills — moved here, below account summary */}
+      <section id="holdings" className="mx-auto max-w-5xl px-6 py-14">
+        <p className="font-mono text-xs uppercase tracking-[0.2em] text-navy/70 mb-6">
+          05 · Holdings — Skills
+        </p>
+        <div className="grid sm:grid-cols-2 gap-x-10 gap-y-8">
+          {SKILLS.map((s) => (
+            <div key={s.group}>
+              <h4 className="font-serif text-navy font-semibold mb-3">{s.group}</h4>
+              <div className="flex flex-wrap gap-2">
+                {s.items.map((item) => (
+                  <span
+                    key={item}
+                    className="font-mono text-xs px-2.5 py-1.5 bg-paper2 border border-rule text-ink/75"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
             </div>
           ))}
         </div>
@@ -382,34 +456,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Holdings — skills */}
-      <section id="holdings" className="mx-auto max-w-5xl px-6 py-14">
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-navy/70 mb-6">
-          05 · Holdings — Skills
-        </p>
-        <div className="grid sm:grid-cols-2 gap-x-10 gap-y-8">
-          {SKILLS.map((s) => (
-            <div key={s.group}>
-              <h4 className="font-serif text-navy font-semibold mb-3">{s.group}</h4>
-              <div className="flex flex-wrap gap-2">
-                {s.items.map((item) => (
-                  <span
-                    key={item}
-                    className="font-mono text-xs px-2.5 py-1.5 bg-paper2 border border-rule text-ink/75"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* Instruments — education & certifications */}
       <section id="instruments" className="mx-auto max-w-5xl px-6 py-14">
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-navy/70 mb-6">
-          06 · Instruments — Education &amp; Certifications
+          06 · Education &amp; Certifications
         </p>
         <div className="grid sm:grid-cols-2 gap-10">
           <div>
@@ -509,12 +559,12 @@ export default function Home() {
               </div>
               <div>
                 <a
-                  href="https://www.linkedin.com/in/munkhnasan-otgonbold-b319b6161"
+                  href="https://github.com/MUNKHNASANOTGONBOLD"
                   className="text-navy hover:underline"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  linkedin.com/in/munkhnasan-otgonbold
+                  github.com/MUNKHNASANOTGONBOLD
                 </a>
               </div>
               <div className="text-ink/50">Arlington, VA</div>
