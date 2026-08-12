@@ -19,7 +19,7 @@ type LedgerEntry = {
   period: string;
   role: string;
   org: string;
-  type: "Full-time" | "Internship" | "Current";
+  type: "Full-time" | "Contract" | "Internship" | "Current";
   lines: string[];
 };
 
@@ -81,7 +81,7 @@ const LEDGER: LedgerEntry[] = [
     period: "Jan 2021 — Jun 2025",
     role: "Financial Analyst",
     org: "Time Power Rich — Mongolia",
-    type: "Contract based",
+    type: "Contract",
     lines: [
       "Analyzed financial, business, and market data to support investment proposals, project planning, and funding decisions for small and medium-sized enterprises.",
       "Prepared 300+ business and funding proposals, helping client companies secure over ₮50 billion in approved financing.",
@@ -349,7 +349,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Skills — moved here, below account summary */}
+      {/* Skills */}
       <section id="holdings" className="mx-auto max-w-5xl px-6 py-14">
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-navy/70 mb-6">
           05 · Holdings — Skills
@@ -389,6 +389,8 @@ export default function Home() {
                       ? "border-gain text-gain"
                       : entry.type === "Internship"
                       ? "border-gold text-gold"
+                      : entry.type === "Contract"
+                      ? "border-rule text-ink/60"
                       : "border-navy/40 text-navy/70"
                   }`}
                 >
@@ -456,7 +458,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Instruments — education & certifications */}
+      {/* Education & Certifications */}
       <section id="instruments" className="mx-auto max-w-5xl px-6 py-14">
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-navy/70 mb-6">
           06 · Education &amp; Certifications
@@ -497,7 +499,7 @@ export default function Home() {
         <LedgerRule />
       </div>
 
-      {/* Contact / footer */}
+      {/* Contact */}
       <section id="contact" className="mx-auto max-w-5xl px-6 py-16">
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-navy/70 mb-6">
           07 · Contact
