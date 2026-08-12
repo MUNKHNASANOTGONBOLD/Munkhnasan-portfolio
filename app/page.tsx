@@ -146,8 +146,7 @@ const PROJECTS: ProjectEntry[] = [
     href: "https://www.linkedin.com/pulse/hidden-cost-healthcare-billing-munkhnasan-otgonbold-zlrce/",
     image: "/projects/healthcare.svg",
   },
-];
-{
+  {
     period: "Feb 2026",
     title: "IFC Investment Services Projects",
     blurb:
@@ -156,7 +155,7 @@ const PROJECTS: ProjectEntry[] = [
     href: "https://www.linkedin.com/pulse/ifc-investment-services-projects-munkhnasan-otgonbold-b878e/",
     image: "/projects/ifc.svg",
   },
-
+];
 const SKILLS = [
   {
     group: "BI & Visualization",
