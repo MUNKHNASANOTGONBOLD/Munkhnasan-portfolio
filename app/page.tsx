@@ -81,7 +81,7 @@ const LEDGER: LedgerEntry[] = [
     period: "Jan 2021 — Jun 2025",
     role: "Financial Analyst",
     org: "Time Power Rich — Mongolia",
-    type: "Full-time",
+    type: "Contract based",
     lines: [
       "Analyzed financial, business, and market data to support investment proposals, project planning, and funding decisions for small and medium-sized enterprises.",
       "Prepared 300+ business and funding proposals, helping client companies secure over ₮50 billion in approved financing.",
