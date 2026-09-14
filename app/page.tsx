@@ -25,91 +25,54 @@ type LedgerEntry = {
 
 const LEDGER: LedgerEntry[] = [
   {
+    period: "Jul 2026 — Aug 2026",
+    role: "Operations Analyst Intern",
+    org: "Digital Factory",
+    type: "Internship",
+    lines: [
+      "Supported the Operations team by improving reporting processes and workflows, turning operational and financial data into dashboards that informed budgeting, forecasting, and efficiency decisions.",
+    ],
+  },
+  {
     period: "Jan 2026 — May 2026",
     role: "Data Analyst Intern",
     org: "MDThink — State of Maryland",
     type: "Internship",
     lines: [
-      "Supported Medicaid analytics and enterprise reporting by validating and reconciling large healthcare datasets across multiple reporting environments.",
-      "Developed advanced SQL queries using joins, CTEs, subqueries, and window functions for reporting extracts, reconciliation logic, and validation analysis.",
-      "Performed source-to-target data mapping, data profiling, and data quality assessments ensuring completeness, consistency, and reporting accuracy.",
-      "Designed and executed validation frameworks including control totals, variance analysis, duplicate checks, and row-level reconciliation.",
-      "Conducted root cause analysis to identify and resolve reporting discrepancies, improving reliability of healthcare reporting datasets.",
-      "Validated datasets in AWS cloud environments including Redshift, Athena, and Glue under HIPAA compliance and audit-readiness requirements.",
+      "Validated and reconciled large healthcare and Medicaid datasets using SQL Server and AWS (Redshift, Athena, Glue), performing source-to-target mapping, data profiling, control totals, variance analysis, and duplicate checks with joins, CTEs, and window functions to maintain accurate, audit-ready data.",
+      "Built Power BI and Tableau dashboards with 100+ DAX measures and Row-Level Security (RLS), while automating data workflows using Python, SQL, and Unix Shell to reduce manual effort and support secure operational reporting.",
     ],
   },
   {
-    period: "Sep 2025 — Dec 2025",
-    role: "Data Analyst Intern",
-    org: "Index Analytics",
-    type: "Internship",
-    lines: [
-      "Designed and developed enterprise BI dashboards using Power BI and Tableau supporting operational reporting and executive decision-making.",
-      "Built advanced Power BI semantic models with 100+ DAX measures supporting enterprise analytics initiatives.",
-      "Implemented Row-Level Security (RLS) to strengthen governance, secure reporting access, and maintain compliance standards.",
-      "Validated production reporting datasets and conducted detailed reconciliation, exception analysis, and data quality checks.",
-      "Contributed to data warehouse design, Oracle data modeling, and reporting modernization initiatives.",
-      "Developed automation scripts using Python, SQL, and Unix Shell scripting; worked with Git and Azure DevOps CI/CD pipelines supporting deployment and reporting lifecycle management.",
-    ],
-  },
-  {
-    period: "Jun 2025 — Sep 2025",
+    period: "Oct 2025 — Dec 2025",
     role: "Data Analyst Intern",
     org: "Trustco Bank — USA",
     type: "Internship",
     lines: [
-      "Analyzed financial and risk datasets supporting banking operations, compliance reporting, and business analytics initiatives.",
-      "Developed and automated reporting logic improving reporting consistency and operational efficiency.",
-      "Built Tableau dashboards for KPI reporting, operational monitoring, and performance tracking.",
-      "Supported audit and regulatory reporting processes through data validation, reconciliation, and financial data integrity activities.",
+      "Analyzed financial and risk datasets with Python (pandas, NumPy) to support banking operations, compliance, and business analytics; automated reporting logic using SSIS and built Tableau KPI dashboards that enabled real-time performance monitoring and reduced report preparation time.",
+      "Validated and reconciled financial datasets in Oracle using metadata management and Azure DevOps, ensuring alignment with enterprise data standards and correcting discrepancies to maintain data integrity for compliance reports.",
     ],
   },
   {
-    period: "Feb 2024 — Jun 2025",
-    role: "Debt Analyst",
+    period: "Apr 2022 — Jun 2025",
+    role: "Budget & Debt Analyst",
     org: "Governor's Office of the Capital City — Ulaanbaatar",
     type: "Full-time",
     lines: [
-      "Analyzed the Capital City's debt portfolio, financing structure, borrowing capacity, repayment obligations, and fiscal impact to support long-term financial planning and investment decisions.",
-      "Prepared financial models, debt repayment schedules, cash flow projections, funding scenarios, and analytical reports for large-scale public investment and infrastructure projects.",
-      "Conducted debt sustainability analysis, financial risk assessment, compliance review, and repayment capacity analysis for domestic and international borrowing initiatives.",
-      "Collaborated with ADB, EBRD, IFC, World Bank, global investors, and domestic financial institutions to support project financing, funding negotiations, and strategic infrastructure development.",
-      "Contributed to financing initiatives including a $95M ADB loan, $25M EBRD loan, $500M foreign bond issuance, ₮500B domestic bond issuance, and $87.2M IFC-related bond issuance.",
+      "Processed and analyzed 1M+ financial records across 70+ municipal organizations using SQL, Python, and Advanced Excel; built Tableau dashboards and automated weekly, monthly, quarterly, and annual reporting for the Governor and executive leadership, enabling data-driven budget and financial oversight.",
+      "Automated financial reporting workflows using Python, SQL, and Excel, reducing report preparation time from approximately 12 hours to 2 hours (83% reduction) while improving reporting consistency and accuracy.",
+      "Led reconciliation and resolution of discrepancies across financial datasets, applying governance and data-quality controls to ensure accuracy and compliance.",
+      "Collaborated with ADB, EBRD, IFC, World Bank, and global investors on project financing supporting a $95M ADB loan, $25M EBRD loan, $500M foreign bond, ₮500B domestic bond, and $87.2M IFC-related blended finance issuance. Named Best Employee of 2024.",
     ],
   },
   {
     period: "Jan 2021 — Jun 2025",
-    role: "Financial Analyst",
-    org: "Time Power Rich — Mongolia",
+    role: "Financial Analyst (On-Contract)",
+    org: "Time Power Rich LLC — Mongolia",
     type: "Contract",
     lines: [
-      "Analyzed financial, business, and market data to support investment proposals, project planning, and funding decisions for small and medium-sized enterprises.",
-      "Prepared 300+ business and funding proposals, helping client companies secure over ₮50 billion in approved financing.",
-      "Conducted financial feasibility studies, ROI analysis, revenue forecasting, cost analysis, and profitability assessments.",
-      "Built financial models, cash flow projections, repayment schedules, and investment analysis reports to evaluate project sustainability.",
-      "Identified financial risks, funding gaps, and cost drivers to support better investment and lending decisions.",
-    ],
-  },
-  {
-    period: "Apr 2022 — Feb 2024",
-    role: "Budget Analyst",
-    org: "Governor's Office of the Capital City — Ulaanbaatar",
-    type: "Full-time",
-    lines: [
-      "Managed city budget planning, expenditure analysis, and fiscal reporting activities; developed annual and mid-term financial plans supporting government budgeting initiatives.",
-      "Presented budget proposals and expenditure analysis reports to government stakeholders and leadership teams, supporting approval of annual and mid-term city budgets (2022–2024).",
-      "Ensured adherence to fiscal compliance standards and reporting requirements.",
-    ],
-  },
-  {
-    period: "Apr 2021 — Apr 2022",
-    role: "Financial Analyst",
-    org: "NAMO LLC — Mongolia",
-    type: "Full-time",
-    lines: [
-      "Managed budgeting, forecasting, investment analysis, and cost control reporting.",
-      "Developed business plans, investment proposals, and operational financial reports.",
-      "Conducted ROI analysis and financial risk assessments supporting business operations.",
+      "Evaluated 300+ business and funding proposals using financial models built in Excel and Python (pandas), performing ROI analysis and risk assessments to enable more informed lending and investment decisions.",
+      "Helped client SMEs secure over $15M in approved financing and guided junior analysts on modeling and validation best practices.",
     ],
   },
 ];
@@ -174,11 +137,11 @@ const PROJECTS: ProjectEntry[] = [
 const SKILLS = [
   {
     group: "BI & Visualization",
-    items: ["Power BI (DAX, RLS)", "Tableau (LOD, calculated fields)", "KPI dashboards"],
+    items: ["Power BI (DAX, RLS, semantic models)", "Tableau (LOD, calculated fields, dashboards)", "Advanced Excel"],
   },
   {
     group: "Data & Code",
-    items: ["SQL (joins, CTEs, window functions)", "Python (pandas, numpy, matplotlib)", "SQL Server · Oracle", "AWS (Redshift, Athena, Glue)"],
+    items: ["SQL (joins, CTEs, window functions)", "Python (pandas, NumPy, Matplotlib)", "SQL Server · Oracle · Snowflake", "AWS (Redshift, Athena, Glue)"],
   },
   {
     group: "Governance",
@@ -186,7 +149,7 @@ const SKILLS = [
   },
   {
     group: "Tools & Domain",
-    items: ["Advanced Excel", "Jira · Azure DevOps · Git", "Financial services & lending data"],
+    items: ["Jira · Azure DevOps · Git · SSIS", "Investment analysis · Public finance", "Project financing · Financial modeling · ROI"],
   },
 ];
 
@@ -216,7 +179,7 @@ export default function Home() {
       <header className="border-b-2 border-navy">
         <div className="mx-auto max-w-5xl px-6 py-6 flex flex-wrap items-baseline justify-between gap-2">
           <div className="font-mono text-xs tracking-widest text-navy uppercase">
-            Statement No. 2026-08 · Arlington / DC
+            Statement No. 2026-09 · Arlington / DC
           </div>
           <nav className="flex flex-wrap gap-x-5 gap-y-1 font-mono text-xs">
             {NAV.map((n) => (
@@ -279,9 +242,10 @@ export default function Home() {
             </div>
             <p className="max-w-2xl text-lg text-ink/80 leading-relaxed">
               Data Analyst with 5+ years across institutional finance, private business, and
-              government organization — building Power BI, Tableau dashboards for finance and
-              portfolio reporting, applying AI-enabled data quality workflows, and turning complex
-              datasets into decision-ready insight. Completing an M.S. in Data Analytics, GPA 3.92.
+              government — building Power BI and Tableau dashboards, writing SQL and Python for
+              data profiling, validation, and reporting, and applying data governance and metadata
+              standards to keep reporting accurate and audit-ready. Completing an M.S. in Data
+              Analytics, GPA 3.92.
             </p>
           </div>
           <div className="w-32 h-32 sm:w-40 sm:h-40 border-2 border-navy shrink-0 relative overflow-hidden bg-paper2">
