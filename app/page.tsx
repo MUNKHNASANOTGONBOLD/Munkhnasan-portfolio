@@ -9,10 +9,10 @@ const NAV = [
 ];
 
 const METRICS = [
-  { label: "Financing supported", value: "$850M+", note: "ADB · EBRD · IFC · World Bank bond and lending issuance" },
-  { label: "Client financing secured", value: "$15M+", note: "300+ business & funding proposals" },
-  { label: "Graduate GPA", value: "3.92", note: "M.S. Data Analytics, exp. 2027" },
-  { label: "Experience", value: "5+ yrs", note: "Financial services, private businesses, and government organization data analysis" },
+  { label: "Financial records analyzed", value: "1M+", note: "SQL · Python · Advanced Excel" },
+  { label: "Organizations reported", value: "70+", note: "Automated executive and financial reporting" },
+  { label: "DAX measures developed", value: "100+", note: "Power BI semantic models · Row-Level Security" },
+  { label: "Reporting time reduced", value: "83%", note: "Approximately 12 hours reduced to 2 hours" },
 ];
 
 type LedgerEntry = {
@@ -140,16 +140,16 @@ const SKILLS = [
     items: ["Power BI (DAX, RLS, semantic models)", "Tableau (LOD, calculated fields, dashboards)", "Advanced Excel"],
   },
   {
-    group: "Data & Code",
-    items: ["SQL (joins, CTEs, window functions)", "Python (pandas, NumPy, Matplotlib)", "SQL Server · Oracle · Snowflake", "AWS (Redshift, Athena, Glue)"],
+    group: "Data & Programming",
+    items: ["SQL (joins, CTEs, window functions)", "Python (pandas, NumPy, Matplotlib)", "SSIS", "Unix Shell"],
   },
   {
-    group: "Governance",
-    items: ["Metadata & data catalog", "Data lineage & dictionaries", "Data governance frameworks", "Quality controls & reconciliation"],
+    group: "Databases & Cloud",
+    items: ["SQL Server", "Oracle", "Snowflake", "AWS (Redshift, Athena, Glue)"],
   },
   {
-    group: "Tools & Domain",
-    items: ["Jira · Azure DevOps · Git · SSIS", "Investment analysis · Public finance", "Project financing · Financial modeling · ROI"],
+    group: "Data Quality & Workflow",
+    items: ["Data profiling & validation", "Reconciliation & control totals", "Source-to-target mapping", "Metadata & data lineage", "Jira · Azure DevOps · Git"],
   },
 ];
 
