@@ -62,17 +62,29 @@ const LEDGER: LedgerEntry[] = [
       "Processed and analyzed 1M+ financial records across 70+ municipal organizations using SQL, Python, and Advanced Excel; built Tableau dashboards and automated weekly, monthly, quarterly, and annual reporting for the Governor and executive leadership, enabling data-driven budget and financial oversight.",
       "Automated financial reporting workflows using Python, SQL, and Excel, reducing report preparation time from approximately 12 hours to 2 hours (83% reduction) while improving reporting consistency and accuracy.",
       "Led reconciliation and resolution of discrepancies across financial datasets, applying governance and data-quality controls to ensure accuracy and compliance.",
-      "Collaborated with ADB, EBRD, IFC, World Bank, and global investors on project financing supporting a $95M ADB loan, $25M EBRD loan, $500M foreign bond, ₮500B domestic bond, and $87.2M IFC-related blended finance issuance. Named Best Employee of 2024.",
+      "Served as Secretary of the Capital Raising Working Group, coordinating with ADB, EBRD, IFC, the World Bank, BlackRock, PIMCO, and other global investors on major financing initiatives, including a $500M international bond for a 20,000-unit sub-city development, a $180M domestic bond for a 300 MW power plant, 82 km road and other infrastructure, $87.2M in IFC-related blended financing for a 50 MW / 200 MWh battery energy storage project, and a $95M ADB loan for a green housing project.",
+      "Led financial analysis, forecasting, financing scenarios, and executive-level reporting for these initiatives, coordinating financial data and deliverables across government agencies, international financial institutions, investors, and project stakeholders. Named Best Employee of 2024.",
     ],
   },
   {
-    period: "Jan 2021 — Jun 2025",
+    period: "Jan 2021 — Jul 2025",
     role: "Financial Analyst (On-Contract)",
     org: "Time Power Rich LLC — Mongolia",
     type: "Contract",
     lines: [
       "Evaluated 300+ business and funding proposals using financial models built in Excel and Python (pandas), performing ROI analysis and risk assessments to enable more informed lending and investment decisions.",
-      "Helped client SMEs secure over $15M in approved financing and guided junior analysts on modeling and validation best practices.",
+      "Helped client SMEs secure over $15M in approved financing across agriculture, farming, SMEs, construction, manufacturing, and other business sectors; guided junior analysts on modeling and validation best practices.",
+    ],
+  },
+  {
+    period: "Apr 2021 — Apr 2022",
+    role: "Financial and Business Analyst",
+    org: "NAMO LLC",
+    type: "Full-time",
+    lines: [
+      "Managed 3 financial statements with discounted cash flow analysis and internal planning models linked to automation tools that decreased manual administrative tasks by 48%.",
+      "Developed and maintained 20+ financial forecasting and projection models for budgeting, cash-flow planning, expenditure analysis, and financial performance monitoring.",
+      "Established a new forecasting, tracking, and management reporting system that improved the availability and accuracy of financial data, increasing reporting accuracy by 14%.",
     ],
   },
 ];
