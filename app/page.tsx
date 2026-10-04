@@ -10,8 +10,8 @@ const NAV = [
 
 const METRICS = [
   { label: "Financial records analyzed", value: "1M+", note: "SQL · Python · Advanced Excel" },
-  { label: "Organizations reported", value: "70+", note: "Automated executive and financial reporting" },
-  { label: "DAX measures developed", value: "100+", note: "Power BI semantic models · Row-Level Security" },
+  { label: "Megaprojects modeled", value: "24", note: "Cash-flow forecasts · repayment schedules · debt capacity" },
+  { label: "Business proposals developed", value: "300+", note: "Financial modeling · ROI · risk assessment" },
   { label: "Reporting time reduced", value: "83%", note: "Approximately 12 hours reduced to 2 hours" },
 ];
 
@@ -19,7 +19,7 @@ type LedgerEntry = {
   period: string;
   role: string;
   org: string;
-  type: "Full-time" | "Contract" | "Internship" | "Current";
+  type: "Full-time" | "Contract" | "Internship" | "Leadership" | "Current";
   lines: string[];
 };
 
@@ -30,50 +30,50 @@ const LEDGER: LedgerEntry[] = [
     org: "Digital Factory",
     type: "Internship",
     lines: [
-      "Supported the Operations team by improving reporting processes and workflows, turning operational and financial data into dashboards that informed budgeting, forecasting, and efficiency decisions.",
+      "Analyzed operational and financial data and developed dashboards to support budgeting, forecasting, and process improvement.",
     ],
   },
   {
     period: "Jan 2026 — May 2026",
     role: "Data Analyst Intern",
-    org: "MDThink — State of Maryland",
+    org: "MDThink",
     type: "Internship",
     lines: [
-      "Validated and reconciled large healthcare and Medicaid datasets using SQL Server and AWS (Redshift, Athena, Glue), performing source-to-target mapping, data profiling, control totals, variance analysis, and duplicate checks with joins, CTEs, and window functions to maintain accurate, audit-ready data.",
-      "Built Power BI and Tableau dashboards with 100+ DAX measures and Row-Level Security (RLS), while automating data workflows using Python, SQL, and Unix Shell to reduce manual effort and support secure operational reporting.",
+      "Validated healthcare datasets using SQL Server and AWS; built Power BI dashboards with 100+ DAX measures and access controls, and automated workflows with Python and SQL.",
     ],
   },
   {
     period: "Oct 2025 — Dec 2025",
     role: "Data Analyst Intern",
-    org: "Trustco Bank — USA",
+    org: "Trustco Bank",
     type: "Internship",
     lines: [
-      "Analyzed financial and risk datasets with Python (pandas, NumPy) to support banking operations, compliance, and business analytics; automated reporting logic using SSIS and built Tableau KPI dashboards that enabled real-time performance monitoring and reduced report preparation time.",
-      "Validated and reconciled financial datasets in Oracle using metadata management and Azure DevOps, ensuring alignment with enterprise data standards and correcting discrepancies to maintain data integrity for compliance reports.",
+      "Analyzed financial and risk data with Python, automated SSIS reporting, and built Tableau KPI dashboards; reconciled Oracle datasets for accurate compliance reporting.",
     ],
   },
   {
-    period: "Apr 2022 — Jun 2025",
-    role: "Budget & Debt Analyst",
-    org: "Governor's Office of the Capital City — Ulaanbaatar",
+    period: "Jan 2024 — Jun 2025",
+    role: "Project Financing and Debt Analyst",
+    org: "Governor's Office of the Capital City — Ulaanbaatar, Mongolia",
     type: "Full-time",
     lines: [
-      "Processed and analyzed 1M+ financial records across 70+ municipal organizations using SQL, Python, and Advanced Excel; built Tableau dashboards and automated weekly, monthly, quarterly, and annual reporting for the Governor and executive leadership, enabling data-driven budget and financial oversight.",
-      "Automated financial reporting workflows using Python, SQL, and Excel, reducing report preparation time from approximately 12 hours to 2 hours (83% reduction) while improving reporting consistency and accuracy.",
-      "Led reconciliation and resolution of discrepancies across financial datasets, applying governance and data-quality controls to ensure accuracy and compliance.",
-      "Served as Secretary of the Capital Raising Working Group, coordinating with ADB, EBRD, IFC, the World Bank, BlackRock, PIMCO, and other global investors on major financing initiatives, including a $500M international bond for a 20,000-unit sub-city development, a $180M domestic bond for a 300 MW power plant, 82 km road and other infrastructure, $87.2M in IFC-related blended financing for a 50 MW / 200 MWh battery energy storage project, and a $95M ADB loan for a green housing project.",
-      "Led financial analysis, forecasting, financing scenarios, and executive-level reporting for these initiatives, coordinating financial data and deliverables across government agencies, international financial institutions, investors, and project stakeholders. Named Best Employee of 2024.",
+      "Built and monitored financial models, cash-flow forecasts, and repayment schedules for Ulaanbaatar's 24-megaproject portfolio; analyzed funding requirements against municipal budgets and debt-service capacity using SQL, Advanced Excel, and Python.",
+      "Analyzed on-lending arrangements and repayment obligations for a $95M GCF concessional loan administered through ADB, supporting a program targeting 10,000 affordable, climate-resilient homes.",
+      "Prepared financing documentation for a $500M international revenue-backed bond for the Selbe subcenter project; coordinated government approvals, Deutsche Bank, BlackRock, and PIMCO as Secretary of the Capital Raising Working Group.",
+      "Coordinated financing documentation for an $87.2M battery energy storage project, including $62.2M in commercial financing and $25M in IFC–Canada concessional capital.",
+      "Prepared proposals for approximately $180M in domestic municipal bond issuances supporting energy, wastewater, flood protection, and road projects.",
     ],
   },
   {
-    period: "Jan 2021 — Jul 2025",
-    role: "Financial Analyst (On-Contract)",
-    org: "Time Power Rich LLC — Mongolia",
-    type: "Contract",
+    period: "Apr 2022 — Dec 2023",
+    role: "Budget Analyst",
+    org: "Governor's Office of the Capital City — Ulaanbaatar, Mongolia",
+    type: "Full-time",
     lines: [
-      "Evaluated 300+ business and funding proposals using financial models built in Excel and Python (pandas), performing ROI analysis and risk assessments to enable more informed lending and investment decisions.",
-      "Helped client SMEs secure over $15M in approved financing across agriculture, farming, SMEs, construction, manufacturing, and other business sectors; guided junior analysts on modeling and validation best practices.",
+      "Processed and analyzed more than 1 million financial records across 70+ municipal organizations using SQL, Python, and Advanced Excel; developed Tableau dashboards and automated executive reporting.",
+      "Automated financial reporting workflows using SQL, Excel, and Python, reducing preparation time from approximately 12 hours to 2 hours (83%) while improving consistency and accuracy.",
+      "Led reconciliation and resolution of discrepancies across financial datasets, applying governance and data-quality controls to maintain accuracy and compliance.",
+      "Analyzed heating, electricity, and water expenditure requirements for 500+ schools, kindergartens, hospitals, and other public institutions.",
     ],
   },
   {
@@ -85,6 +85,34 @@ const LEDGER: LedgerEntry[] = [
       "Managed 3 financial statements with discounted cash flow analysis and internal planning models linked to automation tools that decreased manual administrative tasks by 48%.",
       "Developed and maintained 20+ financial forecasting and projection models for budgeting, cash-flow planning, expenditure analysis, and financial performance monitoring.",
       "Established a new forecasting, tracking, and management reporting system that improved the availability and accuracy of financial data, increasing reporting accuracy by 14%.",
+    ],
+  },
+  {
+    period: "2021 — 2025",
+    role: "Financial Consultant",
+    org: "Time Power Rich LLC",
+    type: "Contract",
+    lines: [
+      "Developed 300+ business and funding proposals using Excel and Python financial models, ROI analysis, and risk assessments across agriculture, construction, manufacturing, finance, and other sectors.",
+      "Mentored 20+ junior analysts in financial modeling, feasibility analysis, and proposal assessment; 10+ mentees subsequently prepared 100+ financing proposals independently.",
+    ],
+  },
+  {
+    period: "2019 — 2020",
+    role: "Co-Founder & Chief Financial Officer",
+    org: "InvestradeMN Corporation",
+    type: "Leadership",
+    lines: [
+      "Co-founded an investment services business and led its financial management and investment service operations.",
+    ],
+  },
+  {
+    period: "2018 — 2019",
+    role: "Founder & President",
+    org: "NUM Startup Club",
+    type: "Leadership",
+    lines: [
+      "Founded and grew a student entrepreneurship club to 200+ members; led 10+ Startup Weekend, Hackathon, and mentorship events reaching 500+ participants.",
     ],
   },
 ];
@@ -103,7 +131,7 @@ const PROJECTS: ProjectEntry[] = [
     period: "Jan 2026",
     title: "The Anatomy of a World Bank Loan",
     blurb:
-      "Cleaned and modeled the World Bank's public IDA portfolio — 11,404 credits/grants across 131 countries — into a Power BI star schema and an interactive dashboard.",
+      "Modeled the World Bank's public IDA portfolio — 11,404 credits and grants across 131 countries — into a Power BI star schema dashboard for portfolio analysis.",
     tags: ["Python", "Power BI", "DAX"],
     href: "https://www.linkedin.com/pulse/anatomy-world-bank-loan-munkhnasan-otgonbold-9ilee/",
     image: "/projects/worldbank.svg",
@@ -112,16 +140,16 @@ const PROJECTS: ProjectEntry[] = [
     period: "Dec 2025",
     title: "The SBA Loans I Wrote at a Coffee Shop — 249,000 Rows Later",
     blurb:
-      "Cleaned, mapped, and analyzed 249,000+ real SBA 7(a) loan records via Excel → SSIS → SQL Server → Tableau, then wrote up the full story on LinkedIn.",
+      "Cleaned, mapped, and analyzed 249,000+ real SBA 7(a) loan records end-to-end from Excel through SSIS to a Tableau dashboard.",
     tags: ["SQL Server", "SSIS", "Tableau", "Excel"],
     href: "https://www.linkedin.com/pulse/sba-loans-i-wrote-coffee-shop-ended-249000-rows-munkhnasan-otgonbold-yg8te/",
     image: "/projects/sba.svg",
   },
   {
     period: "Nov 2025",
-    title: "The Other Side of the Ledger: What Customer Data Looks Like",
+    title: "The Other Side of the Ledger",
     blurb:
-      "Full EDA-to-visualization pipeline on 5,002 messy finance transactions — discovery, cleaning, standardization, feature engineering, and reporting in Python.",
+      "Built a full EDA-to-visualization pipeline on 5,002 messy finance transactions, including cleaning, feature engineering, and reporting.",
     tags: ["Python", "pandas", "NumPy", "Matplotlib"],
     href: "https://www.linkedin.com/pulse/other-side-ledger-what-customer-data-looks-like-munkhnasan-otgonbold-1kste/",
     image: "/projects/ledger.svg",
@@ -130,8 +158,8 @@ const PROJECTS: ProjectEntry[] = [
     period: "2025",
     title: "The Hidden Cost of Healthcare Billing",
     blurb:
-      "Multi-layer data pipeline analyzing claim denial rates and provider performance, built in Snowflake with a Tableau dashboard layer.",
-    tags: ["SQL", "Snowflake", "Tableau"],
+      "Built a multi-layer Snowflake → SSIS → Tableau pipeline analyzing claim denial rates and provider performance.",
+    tags: ["Snowflake", "SSIS", "Tableau"],
     href: "https://www.linkedin.com/pulse/hidden-cost-healthcare-billing-munkhnasan-otgonbold-zlrce/",
     image: "/projects/healthcare.svg",
   },
@@ -139,8 +167,8 @@ const PROJECTS: ProjectEntry[] = [
     period: "Feb 2026",
     title: "IFC Investment Services Projects",
     blurb:
-      "Explored IFC's global private-sector investment dataset — project structures, financial products, and country-level distribution — and published the full analysis on LinkedIn.",
-    tags: ["SQL", "Power BI", "Excel"],
+      "Analyzed 7,083 IFC private-sector investment disclosures across 172 countries and 26 original columns, evaluating project structures, financial products, and country distribution.",
+    tags: ["Excel", "Python", "SQL"],
     href: "https://www.linkedin.com/pulse/ifc-investment-services-projects-munkhnasan-otgonbold-b878e/",
     image: "/projects/ifc.svg",
   },
@@ -152,32 +180,51 @@ const SKILLS = [
     items: ["Power BI (DAX, RLS, semantic models)", "Tableau (LOD, calculated fields, dashboards)", "Advanced Excel"],
   },
   {
-    group: "Data & Programming",
-    items: ["SQL (joins, CTEs, window functions)", "Python (pandas, NumPy, Matplotlib)", "SSIS", "Unix Shell"],
+    group: "Querying & Analytics",
+    items: ["SQL (joins, CTEs, window functions)", "Python (pandas, NumPy, Matplotlib)"],
   },
   {
     group: "Databases & Cloud",
     items: ["SQL Server", "Oracle", "Snowflake", "AWS (Redshift, Athena, Glue)"],
   },
   {
-    group: "Data Quality & Workflow",
-    items: ["Data profiling & validation", "Reconciliation & control totals", "Source-to-target mapping", "Metadata & data lineage", "Jira · Azure DevOps · Git"],
+    group: "Governance & Data Quality",
+    items: ["Metadata & Data Catalogs", "Data Lineage & Dictionaries", "Governance Frameworks", "Validation & Reconciliation"],
+  },
+  {
+    group: "Tools & Workflow",
+    items: ["Jira", "Azure DevOps", "Git", "SSIS"],
+  },
+  {
+    group: "Finance",
+    items: ["Investment Analysis", "Public Finance", "Project Financing", "Financial Modeling", "DCF & ROI Analysis", "Budgeting", "Forecasting", "Variance Analysis"],
   },
 ];
 
 const EDUCATION = [
-  { degree: "M.S. Data Analytics", org: "University of the Potomac", note: "Expected 2027 · GPA 3.92" },
-  { degree: "MBA, Project Management", org: "University of Finance and Economics", note: "2021–2022 · GPA 3.6" },
-  { degree: "Bachelor's Degree, Finance", org: "National University of Mongolia", note: "Sep 2017 – Jun 2021 · Best Graduate" },
+  { degree: "M.S. Data Analytics", org: "University of the Potomac, USA", note: "Jun 2025 – Aug 2027 · GPA 3.89" },
+  { degree: "MBA, Project Management", org: "University of Finance and Economy, Mongolia", note: "Aug 2021 – Jul 2022 · GPA 3.60" },
+  { degree: "BBA, Finance", org: "National University of Mongolia", note: "Sep 2017 – Jun 2021" },
 ];
 
-const CERTS = [
-  { name: "Python", org: "Tech2high", date: "Aug 2025" },
-  { name: "SQL Advanced Querying & Data Analytics", org: "Tech2high", date: "Aug 2025" },
-  { name: "City Finance — World Bank Group", org: "The World Bank Group", date: "Apr 2025" },
-  { name: "Microsoft Power BI", org: "PowerBI Consultant · ID PBIMON00000104", date: "Sep 2023" },
-  { name: "Tableau Desktop I, II", org: "Novelsoft", date: "Oct 2023" },
-  { name: "Project Management", org: "Ganzorig Business School", date: "Sep 2022" },
+const PROFESSIONAL_DEVELOPMENT = [
+  { name: "Data Analyst Bootcamp", org: "Advanced SQL, Python & Reporting · Tech2high", date: "2025" },
+  { name: "Tableau Desktop I & II", org: "Novelsoft · Tableau Partner", date: "2023" },
+  { name: "Microsoft Power BI: Intermediate Level", org: "Power BI Consultant", date: "2023" },
+  { name: "Project Management", org: "Ganzorig Business School", date: "2022" },
+  { name: "City Finance", org: "World Bank Group · Tokyo Development Learning Center", date: "2025" },
+  { name: "FIDIC 2017 Contracts: Red & Yellow Books", org: "ECV Consultancy · Batbayar & Partners LLP · CCM", date: "2025" },
+  { name: "Green and Sustainability Bonds & Local Debt Management", org: "Ministry of Finance, Mongolia", date: "2024" },
+  { name: "Executive Certificate in E-Governance", org: "University of the Potomac", date: "2024" },
+  { name: "Mobile Payment Development & Application", org: "Ministry of Commerce, China", date: "2023" },
+];
+
+const AWARDS = [
+  { name: "Best Employee Award", org: "Governor's Office of the Capital City", date: "2024" },
+  { name: "Certificate of Honor", org: "Governor of Ulaanbaatar", date: "2023" },
+  { name: "Best Graduate Award", org: "National University of Mongolia", date: "2021" },
+  { name: "Second Place — Soybuckthorn Drink", org: "Teacher–Student Startup 2.0 Competition", date: "2019" },
+  { name: "Second Place — Warm Data", org: "Teacher–Student Startup 2.0 Competition", date: "2018" },
 ];
 
 function LedgerRule() {
@@ -191,7 +238,7 @@ export default function Home() {
       <header className="border-b-2 border-navy">
         <div className="mx-auto max-w-5xl px-6 py-6 flex flex-wrap items-baseline justify-between gap-2">
           <div className="font-mono text-xs tracking-widest text-navy uppercase">
-            Statement No. 2026-09 · Arlington / DC
+            Statement No. 2026-10 · Arlington / DC
           </div>
           <nav className="flex flex-wrap gap-x-5 gap-y-1 font-mono text-xs">
             {NAV.map((n) => (
@@ -253,11 +300,11 @@ export default function Home() {
               </a>
             </div>
             <p className="max-w-2xl text-lg text-ink/80 leading-relaxed">
-              Data Analyst with 5+ years across institutional finance, private business, and
-              government — building Power BI and Tableau dashboards, writing SQL and Python for
-              data profiling, validation, and reporting, and applying data governance and metadata
-              standards to keep reporting accurate and audit-ready. Completing an M.S. in Data
-              Analytics, GPA 3.92.
+              Finance and analytics professional with 4+ years across institutional finance,
+              infrastructure, SMEs, and corporate finance, specializing in financial modeling,
+              investment analysis, budgeting, forecasting, and executive reporting. Experienced
+              with Advanced Excel, SQL, Python, Power BI, and Tableau. Completing an M.S. in Data
+              Analytics with a 3.89 GPA.
             </p>
           </div>
           <div className="w-32 h-32 sm:w-40 sm:h-40 border-2 border-navy shrink-0 relative overflow-hidden bg-paper2">
@@ -434,10 +481,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Education & Certifications */}
+      {/* Education, professional development & awards */}
       <section id="instruments" className="mx-auto max-w-5xl px-6 py-14">
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-navy/70 mb-6">
-          06 · Education &amp; Certifications
+          06 · Education &amp; Professional Development
         </p>
         <div className="grid sm:grid-cols-2 gap-10">
           <div>
@@ -453,9 +500,9 @@ export default function Home() {
             </div>
           </div>
           <div>
-            <h4 className="font-serif text-navy font-semibold mb-4">Certifications</h4>
+            <h4 className="font-serif text-navy font-semibold mb-4">Professional Development</h4>
             <ul className="space-y-3">
-              {CERTS.map((c) => (
+              {PROFESSIONAL_DEVELOPMENT.map((c) => (
                 <li key={c.name} className="text-sm text-ink/80 flex gap-2">
                   <span className="text-gold shrink-0">—</span>
                   <span>
@@ -467,6 +514,22 @@ export default function Home() {
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
+        <div className="mt-10 border-t border-rule pt-8">
+          <h4 className="font-serif text-navy font-semibold mb-4">Honors &amp; Awards</h4>
+          <div className="grid sm:grid-cols-2 gap-x-10 gap-y-3">
+            {AWARDS.map((award) => (
+              <div key={award.name} className="text-sm text-ink/80 flex gap-2">
+                <span className="text-gold shrink-0">—</span>
+                <span>
+                  {award.name}
+                  <span className="block font-mono text-xs text-ink/50 mt-0.5">
+                    {award.org} · {award.date}
+                  </span>
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -486,8 +549,8 @@ export default function Home() {
               Open a line of communication.
             </h2>
             <p className="text-ink/70 max-w-lg">
-              Looking for Data Analyst, BI, and data governance roles. Reach out directly —
-              details below.
+              Looking for data analytics, business analytics, and financial analytics roles.
+              Reach out directly — details below.
             </p>
           </div>
           <div>
