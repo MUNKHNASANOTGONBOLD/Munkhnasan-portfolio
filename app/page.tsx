@@ -299,13 +299,29 @@ export default function Home() {
                 </svg>
               </a>
             </div>
-            <p className="max-w-2xl text-lg text-ink/80 leading-relaxed">
-              Finance and analytics professional with 4+ years across institutional finance,
-              infrastructure, SMEs, and corporate finance, specializing in financial modeling,
-              investment analysis, budgeting, forecasting, and executive reporting. Experienced
-              with Advanced Excel, SQL, Python, Power BI, and Tableau. Completing an M.S. in Data
-              Analytics with a 3.89 GPA.
-            </p>
+            <div className="max-w-2xl space-y-4 text-ink/80 leading-relaxed">
+              <h2 className="font-serif text-2xl font-semibold text-navy">
+                Hi, I&apos;m Mason — welcome to my portfolio.
+              </h2>
+              <p>
+                Over the past 4+ years, I&apos;ve worked across government, institutional finance,
+                infrastructure, and private business, using data to solve financial and operational
+                problems. I enjoy turning complex datasets into clear dashboards, automated
+                reporting, forecasting models, and decision-ready insights.
+              </p>
+              <p>
+                My work sits at the intersection of data analytics, business and financial
+                analytics, and workflow automation. I work with SQL, Python, Power BI, Tableau,
+                Advanced Excel, and cloud data platforms to make reporting more accurate, useful,
+                and efficient.
+              </p>
+              <p>
+                What interests me most is going beyond what happened to understand why it happened,
+                what others may have overlooked, and what we can do next. I&apos;m especially
+                interested in opportunities across data analytics, business intelligence,
+                financial analytics, and analytics automation.
+              </p>
+            </div>
           </div>
           <div className="w-32 h-32 sm:w-40 sm:h-40 border-2 border-navy shrink-0 relative overflow-hidden bg-paper2">
             {/* eslint-disable-next-line @next/next/no-img-element */}
