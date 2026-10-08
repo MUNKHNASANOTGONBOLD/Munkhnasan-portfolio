@@ -301,7 +301,7 @@ export default function Home() {
             </div>
             <div className="max-w-2xl space-y-4 text-ink/80 leading-relaxed">
               <h2 className="font-serif text-2xl font-semibold text-navy">
-                Hi, I&apos;m Mason — welcome to my portfolio.
+                Hi, I&apos;m Munhu — welcome to my portfolio.
               </h2>
               <p>
                 Over the past 4+ years, I&apos;ve worked across government, institutional finance,
