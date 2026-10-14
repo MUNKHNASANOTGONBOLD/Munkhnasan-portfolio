@@ -1,3 +1,6 @@
+"use client";
+import { useEffect, useRef, useState } from "react";
+import "./preview/preview.css";
 const NAV = [
   { href: "#standing", label: "01 · Standing" },
   { href: "#account", label: "02 · Account Summary" },
@@ -227,439 +230,207 @@ const AWARDS = [
   { name: "Second Place — Warm Data", org: "Teacher–Student Startup 2.0 Competition", date: "2018" },
 ];
 
-function LedgerRule() {
-  return <div className="h-px w-full bg-rule" />;
+
+const categories = ["All", ...Array.from(new Set(SKILLS.map(group => group.group)))];
+const anchors = [
+  ["about", "About"], ["skills", "Skills"], ["work", "Work"],
+  ["experience", "Experience"], ["achievements", "Achievements"],
+  ["education", "Education"], ["contact", "Contact"]
+];
+
+function useReveal() {
+  useEffect(() => {
+    const nodes = document.querySelectorAll(".reveal");
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      nodes.forEach(n => n.classList.add("shown"));
+      return;
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add("shown"); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.08, rootMargin: "0px 0px -24px 0px" });
+    nodes.forEach(node => observer.observe(node));
+    return () => observer.disconnect();
+  }, []);
 }
 
-export default function Home() {
-  return (
-    <main className="min-h-screen bg-paper bg-ledger">
-      {/* Statement header */}
-      <header className="border-b-2 border-navy">
-        <div className="mx-auto max-w-5xl px-6 py-6 flex flex-wrap items-baseline justify-between gap-2">
-          <div className="font-mono text-xs tracking-widest text-navy uppercase">
-            Statement No. 2026-10 · Arlington / DC
-          </div>
-          <nav className="flex flex-wrap gap-x-5 gap-y-1 font-mono text-xs">
-            {NAV.map((n) => (
-              <a
-                key={n.href}
-                href={n.href}
-                className="text-ink/70 hover:text-navy transition-colors"
-              >
-                {n.label}
-              </a>
-            ))}
-          </nav>
-        </div>
-      </header>
+function Counter({ text }: {text:string}) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const [value, setValue] = useState(text);
+  useEffect(() => {
+    const node = ref.current;
+    if (!node || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const match = text.match(/^([^0-9]*)([0-9]+(?:\.[0-9]+)?)(.*)$/);
+    if (!match) return;
+    const [, prefix, raw, suffix] = match;
+    let raf = 0;
+    const observer = new IntersectionObserver(entries => {
+      if (!entries[0].isIntersecting) return;
+      const start = performance.now();
+      const decimal = raw.includes(".");
+      const tick = (time:number) => {
+        const p = Math.min(1, (time-start)/1100);
+        const eased = 1-Math.pow(1-p, 3);
+        setValue(prefix + (decimal ? (Number(raw)*eased).toFixed(raw.split(".")[1].length) : Math.round(Number(raw)*eased)) + suffix);
+        if (p < 1) raf = requestAnimationFrame(tick);
+      };
+      raf = requestAnimationFrame(tick);
+      observer.disconnect();
+    }, { threshold: 0.5 });
+    observer.observe(node);
+    return () => { observer.disconnect(); cancelAnimationFrame(raf); };
+  }, [text]);
+  return <span ref={ref}>{value}</span>;
+}
 
-      {/* Hero / Statement of Standing */}
-      <section id="standing" className="mx-auto max-w-5xl px-6 pt-16 pb-12">
-        <div className="grid sm:grid-cols-[1fr_auto] gap-8 items-start">
-          <div>
-            <p className="font-mono text-xs uppercase tracking-[0.2em] text-gold mb-4">
-              Statement of Professional Standing
-            </p>
-            <h1 className="font-serif text-5xl sm:text-6xl font-semibold text-navy leading-[1.05] mb-4">
-              Munkhnasan
-              <br />
-              Otgonbold
-            </h1>
-            <div className="flex flex-wrap items-center gap-3 mb-6">
-              <a
-                href="https://www.linkedin.com/in/munkhnasan-otgonbold-b319b6161"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="w-9 h-9 rounded-lg bg-ink text-paper flex items-center justify-center hover:bg-navy transition-colors"
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
-              </a>
-              <a
-                href="https://github.com/MUNKHNASANOTGONBOLD"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-                className="w-9 h-9 rounded-lg bg-ink text-paper flex items-center justify-center hover:bg-navy transition-colors"
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                  <path fillRule="evenodd" clipRule="evenodd" d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.11.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.043-1.61-4.043-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.238 1.84 1.238 1.07 1.834 2.809 1.304 3.495.997.108-.775.42-1.305.763-1.605-2.665-.303-5.467-1.333-5.467-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 0 1 3.003-.404c1.02.005 2.047.138 3.003.404 2.291-1.552 3.297-1.23 3.297-1.23.655 1.652.243 2.873.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576C20.565 21.796 24 17.298 24 12c0-6.63-5.37-12-12-12z"/>
-                </svg>
-              </a>
-              <a
-                href="https://public.tableau.com/app/profile/munkhnasan.otgonbold/vizzes"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Tableau Public dashboards (opens in a new tab)"
-                className="inline-flex items-center gap-2 rounded-lg border border-navy px-3 py-2 font-mono text-xs text-navy hover:bg-navy/5 transition-colors"
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                  <path d="M4 20V10M12 20V4M20 20V14" />
-                </svg>
-                Tableau Dashboards
-              </a>
-              <a
-                href="mailto:munkhnasanotgonbold92@gmail.com"
-                aria-label="Gmail"
-                className="w-9 h-9 rounded-lg bg-ink text-paper flex items-center justify-center hover:bg-navy transition-colors"
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M2 4h20v16H2V4zm2 2v.01L12 12l8-5.99V6H4zm16 12V8.24l-8 6-8-6V18h16z"/>
-                </svg>
-              </a>
-            </div>
-            <div className="max-w-2xl space-y-4 text-ink/80 leading-relaxed">
-              <h2 className="font-serif text-2xl font-semibold text-navy">
-                Hi, I&apos;m Mugi — welcome to my portfolio.
-              </h2>
-              <p>
-                Over the past 4+ years, I&apos;ve worked across government, institutional finance,
-                infrastructure, and private business, using data to solve financial and operational
-                problems. I enjoy turning complex datasets into clear dashboards, automated
-                reporting, forecasting models, and decision-ready insights.
-              </p>
-              <p>
-                My work sits at the intersection of data analytics, business and financial
-                analytics, and workflow automation. I work with SQL, Python, Power BI, Tableau,
-                Advanced Excel, and cloud data platforms to make reporting more accurate, useful,
-                and efficient.
-              </p>
-              <p>
-                What interests me most is going beyond what happened to understand why it happened,
-                what others may have overlooked, and what we can do next. I&apos;m especially
-                interested in opportunities across data analytics, business intelligence,
-                financial analytics, and analytics automation.
-              </p>
-            </div>
-          </div>
-          <div className="w-32 h-32 sm:w-40 sm:h-40 border-2 border-navy shrink-0 relative overflow-hidden bg-paper2">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/headshot.jpg"
-              alt="Munkhnasan Otgonbold"
-              className="w-full h-full object-cover"
-            />
+function Icon({name}:{name:"arrow"|"plus"|"external"}) {
+  return <span aria-hidden="true">{name==="plus" ? "＋" : name==="arrow" ? "↗" : "↗"}</span>;
+}
+
+export default function PreviewPage() {
+  useReveal();
+  const [active, setActive] = useState("about");
+  const [menu, setMenu] = useState(false);
+  const [skillCategory, setSkillCategory] = useState("All");
+  const [selectedSkill, setSelectedSkill] = useState<string|null>(null);
+  const [selectedProject, setSelectedProject] = useState(0);
+  const [expandedExperience, setExpandedExperience] = useState<number[]>(LEDGER.map((_,i)=>i));
+  const [expandedAward, setExpandedAward] = useState<number|null>(null);
+  useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {if (e.isIntersecting) setActive(e.target.id);});
+    }, {rootMargin:"-30% 0px -55% 0px"});
+    anchors.forEach(([id]) => {const node = document.getElementById(id); if(node) observer.observe(node);});
+    return () => observer.disconnect();
+  }, []);
+  const groups = SKILLS.filter(group => skillCategory==="All" || skillCategory===group.group);
+  const selectedMatches = selectedSkill
+    ? PROJECTS.filter(project => project.tags.some(tag => selectedSkill.toLowerCase().includes(tag.toLowerCase()) || tag.toLowerCase().includes(selectedSkill.toLowerCase())))
+    : [];
+  return <main className="mugi-v2" id="top">
+    <div className="grain" aria-hidden="true" />
+    <header className="nav-shell">
+      <a className="brand" href="#top" aria-label="Mugi — back to top">M<span className="brand-star">✳</span>GI<span className="brand-dot">.</span></a>
+      <nav className={"floating-nav "+(menu?"nav-open":"")} aria-label="Main navigation">
+        {anchors.map(([id,label]) => <a key={id} href={"#"+id} className={active===id?"current":""} onClick={()=>setMenu(false)}>{label}</a>)}
+      </nav>
+      <a href="/Munkhnasan-Otgonbold-Resume.pdf" download className="nav-resume">Resume <span>↗</span></a>
+      <button className="menu-toggle" onClick={()=>setMenu(!menu)} aria-expanded={menu} aria-controls="mobile-nav">{menu?"Close":"Menu"} <span>☰</span></button>
+    </header>
+    <section className="hero" aria-labelledby="hero-title">
+      <div className="hero-overline"><span className="status-pulse"/> AVAILABLE FOR ANALYTICS OPPORTUNITIES <span className="hero-index">PORTFOLIO / 2026</span></div>
+      <div className="hero-main">
+        <div className="hero-copy">
+          <div className="eyebrow">FINANCE × DATA × IMPACT</div>
+          <h1 id="hero-title">Numbers<br/>tell <em>stories.</em><br/>I find the <span>why.</span></h1>
+          <p className="hero-sub">Hi, I&apos;m <strong>Mugi.</strong> I turn complex financial and operational data into decisions that matter—through analytics, automation, and clear visual storytelling.</p>
+          <div className="hero-actions">
+            <a className="pill-btn dark" href="#work">Explore my work <Icon name="arrow"/></a>
+            <a className="pill-btn light" href="#about">Get to know me <span>↓</span></a>
           </div>
         </div>
-
-        <div className="mt-8 flex flex-wrap gap-3">
-          <a
-            href="#contact"
-            className="inline-flex items-center bg-navy text-paper font-mono text-xs uppercase tracking-wider px-5 py-3 hover:bg-navy2 transition-colors"
-          >
-            Open Account — Contact
-          </a>
-          <a
-            href="#ledger"
-            className="inline-flex items-center border border-navy text-navy font-mono text-xs uppercase tracking-wider px-5 py-3 hover:bg-navy/5 transition-colors"
-          >
-            View Ledger
-          </a>
-          <a
-            href="/Munkhnasan-Otgonbold-Resume.pdf"
-            download
-            className="inline-flex items-center gap-2 border border-gold text-gold font-mono text-xs uppercase tracking-wider px-5 py-3 hover:bg-gold/10 transition-colors"
-          >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-              <polyline points="7 10 12 15 17 10" />
-              <line x1="12" y1="15" x2="12" y2="3" />
-            </svg>
-            Download Resume
-          </a>
+        <div className="hero-visual" aria-label="Decorative professional portfolio feature">
+          <div className="orbit orbit-one"/><div className="orbit orbit-two"/>
+          <div className="hero-feature">
+            <div className="feature-label">DATA INTO DECISIONS <span>01 / 04</span></div>
+            <div className="feature-spark" aria-hidden="true"><span style={{height:"24%"}}/><span style={{height:"42%"}}/><span style={{height:"35%"}}/><span style={{height:"68%"}}/><span style={{height:"55%"}}/><span style={{height:"83%"}}/><span style={{height:"100%"}}/></div>
+            <div className="feature-bottom"><b>83%</b><small>LESS REPORTING TIME<br/>12 HOURS → 2 HOURS</small></div>
+          </div>
+          <span className="visual-stamp">ANALYZE<br/>DESIGN<br/>IMPROVE ↗</span>
         </div>
-      </section>
-
-      <div className="mx-auto max-w-5xl px-6">
-        <LedgerRule />
       </div>
-
-      {/* Account summary */}
-      <section id="account" className="mx-auto max-w-5xl px-6 py-14">
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-navy/70 mb-6">
-          02 · Account Summary
-        </p>
-        <div className="grid grid-cols-2 sm:grid-cols-4 border border-rule">
-          {METRICS.map((m, i) => (
-            <div
-              key={m.label}
-              className={`p-5 ${i % 2 === 0 ? "sm:border-r" : ""} ${
-                i < 2 ? "border-b sm:border-b-0" : ""
-              } sm:[&:not(:last-child)]:border-r border-rule`}
-            >
-              <div className="font-mono text-2xl sm:text-3xl tabular text-gain font-medium mb-1">
-                {m.value}
-              </div>
-              <div className="text-sm text-ink/70">{m.label}</div>
-              <div className="text-xs text-ink/45 mt-1">{m.note}</div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Skills */}
-      <section id="holdings" className="mx-auto max-w-5xl px-6 py-14">
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-navy/70 mb-6">
-          05 · Holdings — Skills
-        </p>
-        <div className="grid sm:grid-cols-2 gap-x-10 gap-y-8">
-          {SKILLS.map((s) => (
-            <div key={s.group}>
-              <h4 className="font-serif text-navy font-semibold mb-3">{s.group}</h4>
-              <div className="flex flex-wrap gap-2">
-                {s.items.map((item) => (
-                  <span
-                    key={item}
-                    className="font-mono text-xs px-2.5 py-1.5 bg-paper2 border border-rule text-ink/75"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Ledger — experience */}
-      <section id="ledger" className="mx-auto max-w-5xl px-6 py-14">
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-navy/70 mb-6">
-          03 · General Ledger — Experience
-        </p>
-        <div className="border-t border-rule">
-          {LEDGER.map((entry) => (
-            <div key={entry.role} className="border-b border-rule py-6 grid sm:grid-cols-[140px_1fr] gap-3 sm:gap-8">
-              <div>
-                <div className="font-mono text-xs text-ink/50 tabular">{entry.period}</div>
-                <span
-                  className={`inline-block mt-2 font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 border ${
-                    entry.type === "Current"
-                      ? "border-gain text-gain"
-                      : entry.type === "Internship"
-                      ? "border-gold text-gold"
-                      : entry.type === "Contract"
-                      ? "border-rule text-ink/60"
-                      : "border-navy/40 text-navy/70"
-                  }`}
-                >
-                  {entry.type}
-                </span>
-              </div>
-              <div>
-                <h3 className="font-serif text-xl text-navy font-semibold">{entry.role}</h3>
-                <p className="font-mono text-xs text-ink/60 mb-3">{entry.org}</p>
-                <ul className="space-y-1.5">
-                  {entry.lines.map((l) => (
-                    <li key={l} className="text-sm text-ink/80 leading-relaxed flex gap-2">
-                      <span className="text-gold shrink-0">—</span>
-                      <span>{l}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Projects */}
-      <section id="projects" className="mx-auto max-w-5xl px-6 py-14">
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-navy/70 mb-6">
-          04 · Statements — Projects
-        </p>
-        <div className="grid sm:grid-cols-2 gap-6">
-          {PROJECTS.map((p) => (
-            <a
-              key={p.title}
-              href={p.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group block border border-rule bg-paper2 hover:border-navy transition-colors overflow-hidden"
-            >
-              <img
-                src={p.image}
-                alt={p.title}
-                className="w-full h-40 object-cover border-b border-rule"
-              />
-              <div className="p-5">
-                <div className="font-mono text-xs text-ink/50 tabular mb-2">{p.period}</div>
-                <h3 className="font-serif text-lg text-navy font-semibold leading-snug mb-2 group-hover:underline">
-                  {p.title}
-                </h3>
-                <p className="text-sm text-ink/75 leading-relaxed mb-4">{p.blurb}</p>
-                <div className="flex flex-wrap gap-1.5 mb-3">
-                  {p.tags.map((t) => (
-                    <span
-                      key={t}
-                      className="font-mono text-[10px] uppercase tracking-wide px-2 py-1 border border-rule text-ink/60"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-                <span className="font-mono text-xs text-gold group-hover:underline">
-                  Read on LinkedIn →
-                </span>
-              </div>
-            </a>
-          ))}
-        </div>
-      </section>
-
-      {/* Education, professional development & awards */}
-      <section id="instruments" className="mx-auto max-w-5xl px-6 py-14">
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-navy/70 mb-6">
-          06 · Education &amp; Professional Development
-        </p>
-        <div className="grid sm:grid-cols-2 gap-10">
-          <div>
-            <h4 className="font-serif text-navy font-semibold mb-4">Education</h4>
-            <div className="space-y-4">
-              {EDUCATION.map((e) => (
-                <div key={e.degree} className="border-l-2 border-gold pl-4">
-                  <div className="font-serif text-ink font-medium">{e.degree}</div>
-                  <div className="font-mono text-xs text-ink/60">{e.org}</div>
-                  <div className="font-mono text-xs text-gain mt-0.5">{e.note}</div>
-                </div>
-              ))}
-            </div>
+      <div className="hero-footer"><span>BASED IN ARLINGTON, VA</span><a href="#about">SCROLL TO EXPLORE ↓</a><span>DATA WITH PURPOSE © 2026</span></div>
+    </section>
+    <section id="about" className="section about-section">
+      <div className="section-meta reveal"><span>01 / THE HUMAN BEHIND THE DATA</span><span>ABOUT ME</span></div>
+      <div className="about-layout">
+        <div className="reveal">
+          <h2 className="section-title">Hi, I&apos;m <em>Mugi.</em></h2>
+          <p className="about-lead">A finance professional with an analyst&apos;s curiosity and a builder&apos;s mindset.</p>
+          <div className="body-copy">
+            <p>Over the past 4+ years, I&apos;ve worked across government, institutional finance, infrastructure, and private business, using data to solve financial and operational problems. I enjoy turning complex datasets into clear dashboards, automated reporting, forecasting models, and decision-ready insights.</p>
+            <p>My work sits at the intersection of data analytics, business and financial analytics, and workflow automation. I work with SQL, Python, Power BI, Tableau, Advanced Excel, and cloud data platforms to make reporting more accurate, useful, and efficient.</p>
+            <p>What interests me most is going beyond what happened to understand why it happened, what others may have overlooked, and what we can do next. I&apos;m especially interested in opportunities across data analytics, business intelligence, financial analytics, and analytics automation.</p>
           </div>
-          <div>
-            <h4 className="font-serif text-navy font-semibold mb-4">Professional Development</h4>
-            <ul className="space-y-3">
-              {PROFESSIONAL_DEVELOPMENT.map((c) => (
-                <li key={c.name} className="text-sm text-ink/80 flex gap-2">
-                  <span className="text-gold shrink-0">—</span>
-                  <span>
-                    {c.name}
-                    <span className="block font-mono text-xs text-ink/50 mt-0.5">
-                      {c.org} · {c.date}
-                    </span>
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <div className="about-links"><a href="https://www.linkedin.com/in/munkhnasan-otgonbold-b319b6161" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/MUNKHNASANOTGONBOLD" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://public.tableau.com/app/profile/munkhnasan.otgonbold/vizzes" target="_blank" rel="noreferrer">Tableau Public ↗</a></div>
         </div>
-        <div className="mt-10 border-t border-rule pt-8">
-          <h4 className="font-serif text-navy font-semibold mb-4">Honors &amp; Awards</h4>
-          <div className="grid sm:grid-cols-2 gap-x-10 gap-y-3">
-            {AWARDS.map((award) => (
-              <div key={award.name} className="text-sm text-ink/80 flex gap-2">
-                <span className="text-gold shrink-0">—</span>
-                <span>
-                  {award.name}
-                  <span className="block font-mono text-xs text-ink/50 mt-0.5">
-                    {award.org} · {award.date}
-                  </span>
-                </span>
-              </div>
-            ))}
-          </div>
+        <div className="profile-card reveal" tabIndex={0}>
+          <div className="id-card-top"><span>PROFESSIONAL IDENTITY</span><span>✳ MUGI / 001</span></div>
+          <div className="profile-photo"><img src="/headshot.jpg" alt="Munkhnasan Otgonbold" /></div>
+          <div className="profile-identity"><span>THE PERSON BEHIND THE NUMBERS</span><h3>Munkhnasan<br/>Otgonbold</h3><p>Finance & Data Analytics</p></div>
+          <div className="id-card-bottom"><span>ARLINGTON, VIRGINIA</span><span>ANALYST · BUILDER</span></div>
         </div>
-      </section>
-
-      <div className="mx-auto max-w-5xl px-6">
-        <LedgerRule />
       </div>
-
-      {/* Contact */}
-      <section id="contact" className="mx-auto max-w-5xl px-6 py-16">
-        <p className="font-mono text-xs uppercase tracking-[0.2em] text-navy/70 mb-6">
-          07 · Contact
-        </p>
-        <div className="grid sm:grid-cols-[1fr_auto] items-end gap-8">
-          <div>
-            <h2 className="font-serif text-3xl text-navy font-semibold mb-3">
-              Open a line of communication.
-            </h2>
-            <p className="text-ink/70 max-w-lg">
-              Looking for data analytics, business analytics, and financial analytics roles.
-              Reach out directly — details below.
-            </p>
+    </section>
+    <section id="skills" className="section skills-section">
+      <div className="section-meta reveal"><span>02 / MY TOOLKIT</span><span>SKILLS & CAPABILITIES</span></div>
+      <div className="skills-heading reveal"><h2 className="section-title">Built on <em>curiosity.</em></h2><p>Explore my technical toolkit. Select a skill to see where it shows up in my work.</p></div>
+      <div className="filter-row" role="group" aria-label="Filter skills by category">
+        {categories.map(c=><button key={c} className={"filter-chip "+(c===skillCategory?"selected":"")} onClick={()=>{setSkillCategory(c);setSelectedSkill(null)}} aria-pressed={c===skillCategory}>{c}</button>)}
+      </div>
+      <div className="skill-board">
+        {groups.flatMap(group=>group.items.map((item,i)=>({item,group:group.group,i}))).map(({item,group,i})=><button type="button" key={group+item} className={"skill-tile "+(selectedSkill===item?"chosen":"")} onClick={()=>setSelectedSkill(selectedSkill===item?null:item)} aria-pressed={selectedSkill===item}>
+          <small>{String(i+1).padStart(2,"0")}</small><strong>{item.split(/[ (]/).map(s=>s[0]||"").join("").slice(0,3).toUpperCase()}</strong><span>{item}</span>
+        </button>)}
+      </div>
+      <div className="skill-detail" aria-live="polite"><div><span className="eyebrow">SELECTED CAPABILITY</span><h3>{selectedSkill||"Choose a skill above"}</h3></div><div><span className="eyebrow">RELATED PROJECTS</span><p>{selectedSkill ? (selectedMatches.length ? selectedMatches.map(p=>p.title).join(" · ") : "Explore the complete project collection for related work.") : "Tap any tile to explore the toolkit."}</p></div></div>
+    </section>
+    <section id="work" className="section work-section">
+      <div className="section-meta reveal"><span>03 / SELECTED WORK</span><span>THE PROJECT ARCHIVE</span></div>
+      <div className="work-heading reveal"><h2 className="section-title">Things I&apos;ve <em>built.</em></h2><p>Real problems. Real data. Practical insights. Select a project to see its story.</p></div>
+      <div className="projects-accordion" aria-label="Interactive projects">
+        {PROJECTS.map((p,i)=><article key={p.title} className={"project-panel "+(selectedProject===i?"expanded":"")}>
+          <button className="panel-trigger" aria-expanded={selectedProject===i} onClick={()=>setSelectedProject(i)} aria-label={"View "+p.title}><span className="project-num">{String(i+1).padStart(2,"0")}</span><span className="project-vertical">{p.title}</span><span className="project-expand"><Icon name="plus"/></span></button>
+          <div className="panel-content" aria-hidden={selectedProject!==i}>
+            <div className="project-graphic"><img src={p.image} alt="" loading="lazy"/></div>
+            <div className="project-info"><div className="eyebrow">PROJECT {String(i+1).padStart(2,"0")} / {p.period}</div><h3>{p.title}</h3><p>{p.blurb}</p><div className="tag-row">{p.tags.map(t=><span key={t}>{t}</span>)}</div><a className="pill-btn dark" href={p.href} target="_blank" rel="noopener noreferrer">Read full case study <Icon name="external"/></a></div>
           </div>
-          <div>
-            <div className="flex flex-wrap items-center gap-3 mb-5">
-              <a
-                href="https://www.linkedin.com/in/munkhnasan-otgonbold-b319b6161"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="w-10 h-10 rounded-xl bg-ink text-paper flex items-center justify-center hover:bg-navy transition-colors"
-              >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
-              </a>
-              <a
-                href="https://github.com/MUNKHNASANOTGONBOLD"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-                className="w-10 h-10 rounded-xl bg-ink text-paper flex items-center justify-center hover:bg-navy transition-colors"
-              >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                  <path fillRule="evenodd" clipRule="evenodd" d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.11.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.043-1.61-4.043-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.238 1.84 1.238 1.07 1.834 2.809 1.304 3.495.997.108-.775.42-1.305.763-1.605-2.665-.303-5.467-1.333-5.467-5.93 0-1.31.469-2.381 1.236-3.221-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 0 1 3.003-.404c1.02.005 2.047.138 3.003.404 2.291-1.552 3.297-1.23 3.297-1.23.655 1.652.243 2.873.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576C20.565 21.796 24 17.298 24 12c0-6.63-5.37-12-12-12z"/>
-                </svg>
-              </a>
-              <a
-                href="https://public.tableau.com/app/profile/munkhnasan.otgonbold/vizzes"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Tableau Public dashboards (opens in a new tab)"
-                className="inline-flex items-center gap-2 rounded-lg border border-navy px-3 py-2 font-mono text-xs text-navy hover:bg-navy/5 transition-colors"
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                  <path d="M4 20V10M12 20V4M20 20V14" />
-                </svg>
-                Tableau Dashboards
-              </a>
-              <a
-                href="mailto:munkhnasanotgonbold92@gmail.com"
-                aria-label="Gmail"
-                className="w-10 h-10 rounded-xl bg-ink text-paper flex items-center justify-center hover:bg-navy transition-colors"
-              >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M2 4h20v16H2V4zm2 2v.01L12 12l8-5.99V6H4zm16 12V8.24l-8 6-8-6V18h16z"/>
-                </svg>
-              </a>
-            </div>
-            <div className="font-mono text-sm space-y-1 text-right sm:text-left">
-              <div>
-                <a href="mailto:munkhnasanotgonbold92@gmail.com" className="text-navy hover:underline">
-                  munkhnasanotgonbold92@gmail.com
-                </a>
-              </div>
-              <div>
-                <a href="tel:+15712380015" className="text-navy hover:underline">
-                  571-238-0015
-                </a>
-              </div>
-              <div>
-                <a
-                  href="https://github.com/MUNKHNASANOTGONBOLD"
-                  className="text-navy hover:underline"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  github.com/MUNKHNASANOTGONBOLD
-                </a>
-              </div>
-              <div className="text-ink/50">Arlington, VA</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <footer className="border-t border-rule">
-        <div className="mx-auto max-w-5xl px-6 py-6 font-mono text-[11px] text-ink/45 flex justify-between">
-          <span>Munkhnasan Otgonbold — Statement generated {new Date().getFullYear()}</span>
-          <span>Balance carried forward →</span>
-        </div>
-      </footer>
-    </main>
-  );
+        </article>)}
+      </div>
+      <div className="work-cta"><span>MORE DATA STORIES & DASHBOARDS</span><a href="https://public.tableau.com/app/profile/munkhnasan.otgonbold/vizzes" target="_blank" rel="noopener noreferrer">Explore my Tableau portfolio ↗</a></div>
+    </section>
+    <section id="experience" className="section experience-section">
+      <div className="section-meta reveal"><span>04 / CAREER JOURNEY</span><span>EXPERIENCE</span></div>
+      <h2 className="section-title reveal">The journey <em>so far.</em></h2>
+      <p className="section-intro reveal">From investment decisions to operational intelligence. Select any role to expand its complete description.</p>
+      <div className="timeline">
+        {LEDGER.map((e,i)=>{const open=expandedExperience.includes(i);return <article className="timeline-entry reveal" key={e.period+e.org+e.role}>
+          <div className="timeline-period"><span>{e.period}</span><i/></div>
+          <button className="timeline-card" aria-expanded={open} onClick={()=>setExpandedExperience(old=>open?old.filter(n=>n!==i):[...old,i])}>
+            <div className="timeline-top"><span className="eyebrow">{e.type}</span><span>{open?"−":"＋"}</span></div><h3>{e.role}</h3><p className="timeline-org">{e.org}</p>
+            {open && <ul className="timeline-details">{e.lines.map(line=><li key={line}>{line}</li>)}</ul>}
+          </button>
+        </article>})}
+      </div>
+    </section>
+    <section id="achievements" className="section achievement-section">
+      <div className="section-meta reveal"><span>05 / IMPACT IN NUMBERS</span><span>ACHIEVEMENTS</span></div>
+      <h2 className="section-title reveal">Impact, <em>measured.</em></h2>
+      <div className="achievement-grid">
+        {METRICS.map((m,i)=><div key={m.label} className="metric-card reveal"><span className="metric-index">0{i+1} / 04</span><div className="metric-number"><Counter text={m.value}/></div><h3>{m.label}</h3><p>{m.note}</p></div>)}
+      </div>
+      <div className="impact-note reveal">
+        <h3>Behind every number is a decision.</h3>
+        <p>My municipal financing experience included preparing documentation for a $500M international revenue-backed bond, proposals for approximately $180M in domestic municipal bonds, and coordinating financing documentation for an $87.2M energy storage project. These were collaborative institutional efforts, not independently executed transactions.</p>
+      </div>
+      <div className="awards-block"><div className="subhead"><span>RECOGNITION</span><h3>Proud <em>moments.</em></h3></div><div className="award-list">{AWARDS.map((a,i)=><button key={a.name} className="award-row" onClick={()=>setExpandedAward(expandedAward===i?null:i)} aria-expanded={expandedAward===i}><span className="award-index">0{i+1}</span><span className="award-name">{a.name}{expandedAward===i&&<small>{a.org}</small>}</span><span className="award-date">{a.date}</span><span className="award-icon">{expandedAward===i?"−":"＋"}</span></button>)}</div></div>
+    </section>
+    <section id="education" className="section education-section">
+      <div className="section-meta reveal"><span>06 / ALWAYS LEARNING</span><span>EDUCATION & GROWTH</span></div>
+      <h2 className="section-title reveal">Always <em>learning.</em></h2>
+      <div className="education-layout">
+        <div className="reveal"><h3 className="column-label">EDUCATION</h3>{EDUCATION.map(e=><article className="edu-card" key={e.degree}><h4>{e.degree}</h4><p>{e.org}</p><span>{e.note}</span></article>)}</div>
+        <div className="reveal"><h3 className="column-label">CERTIFICATIONS & PROFESSIONAL DEVELOPMENT</h3>{PROFESSIONAL_DEVELOPMENT.map((c,i)=><article className="certificate-row" key={c.name}><span>{String(i+1).padStart(2,"0")}</span><div><h4>{c.name}</h4><p>{c.org}</p></div><span>{c.date}</span></article>)}</div>
+      </div>
+    </section>
+    <section id="contact" className="contact-section">
+      <div className="section-meta"><span>07 / WHAT'S NEXT?</span><span>GET IN TOUCH</span></div>
+      <h2>Let&apos;s make<br/><em>something matter.</em></h2>
+      <p>Open to Data Analyst, Business Analyst, BI, Financial Analyst, and Operations Analyst opportunities.</p>
+      <a className="contact-email" href="mailto:munkhnasanotgonbold92@gmail.com">Let&apos;s talk <Icon name="arrow"/></a>
+      <div className="contact-links"><a href="mailto:munkhnasanotgonbold92@gmail.com">Email ↗</a><a href="tel:+15712380015">Phone ↗</a><a href="https://www.linkedin.com/in/munkhnasan-otgonbold-b319b6161" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/MUNKHNASANOTGONBOLD" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://public.tableau.com/app/profile/munkhnasan.otgonbold/vizzes" target="_blank" rel="noreferrer">Tableau ↗</a><a href="/Munkhnasan-Otgonbold-Resume.pdf" download>Resume ↗</a></div>
+      <footer><span>© {new Date().getFullYear()} MUNKHNASAN OTGONBOLD</span><span>DESIGNED WITH INTENTION · BUILT WITH DATA</span><a href="/legacy">ORIGINAL PORTFOLIO ↗</a><a href="#top">BACK TO TOP ↑</a></footer>
+    </section>
+  </main>;
 }
