@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Munkhnasan Otgonbold — Statement of Professional Standing",
+  title: "Mugi | Finance & Data Analytics — Munkhnasan Otgonbold",
   description:
-    "Data analytics & business intelligence portfolio of Munkhnasan (Mason) Otgonbold.",
+    "Explore Mugi's interactive portfolio: financial analytics, business intelligence, Python, SQL, Tableau, and data-driven project case studies.",
 };
 
 export default function RootLayout({
