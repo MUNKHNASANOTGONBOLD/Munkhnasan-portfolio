@@ -311,7 +311,7 @@ export default function PreviewPage() {
   return <main className="mugi-v2" id="top">
     <div className="grain" aria-hidden="true" />
     <header className="nav-shell">
-      <a className="brand" href="#top" aria-label="Mugi — back to top">M<span className="brand-star">✳</span>GI<span className="brand-dot">.</span></a>
+      <a className="brand" href="#top" aria-label="Mason — back to top">MAS<span className="brand-star">✳</span>N<span className="brand-dot">.</span></a>
       <nav className={"floating-nav "+(menu?"nav-open":"")} aria-label="Main navigation">
         {anchors.map(([id,label]) => <a key={id} href={"#"+id} className={active===id?"current":""} onClick={()=>setMenu(false)}>{label}</a>)}
       </nav>
@@ -324,7 +324,7 @@ export default function PreviewPage() {
         <div className="hero-copy">
           <div className="eyebrow">FINANCE × DATA × IMPACT</div>
           <h1 id="hero-title">Numbers<br/>tell <em>stories.</em><br/>I find the <span>why.</span></h1>
-          <p className="hero-sub">Hi, I&apos;m <strong>Mugi.</strong> I turn complex financial and operational data into decisions that matter—through analytics, automation, and clear visual storytelling.</p>
+          <p className="hero-sub">Hi, I&apos;m <strong>Mason.</strong> I turn complex financial and operational data into decisions that matter—through analytics, automation, and clear visual storytelling.</p>
           <div className="hero-actions">
             <a className="pill-btn dark" href="#work">Explore my work <Icon name="arrow"/></a>
             <a className="pill-btn light" href="#about">Get to know me <span>↓</span></a>
@@ -346,7 +346,7 @@ export default function PreviewPage() {
       <div className="section-meta reveal"><span>01 / THE HUMAN BEHIND THE DATA</span><span>ABOUT ME</span></div>
       <div className="about-layout">
         <div className="reveal">
-          <h2 className="section-title">Hi, I&apos;m <em>Mugi.</em></h2>
+          <h2 className="section-title">Hi, I&apos;m <em>Mason.</em></h2>
           <p className="about-lead">A finance professional with an analyst&apos;s curiosity and a builder&apos;s mindset.</p>
           <div className="body-copy">
             <p>Over the past 4+ years, I&apos;ve worked across government, institutional finance, infrastructure, and private business, using data to solve financial and operational problems. I enjoy turning complex datasets into clear dashboards, automated reporting, forecasting models, and decision-ready insights.</p>
@@ -356,7 +356,7 @@ export default function PreviewPage() {
           <div className="about-links"><a href="https://www.linkedin.com/in/munkhnasan-otgonbold-b319b6161" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/MUNKHNASANOTGONBOLD" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://public.tableau.com/app/profile/munkhnasan.otgonbold/vizzes" target="_blank" rel="noreferrer">Tableau Public ↗</a></div>
         </div>
         <div className="profile-card reveal" tabIndex={0}>
-          <div className="id-card-top"><span>PROFESSIONAL IDENTITY</span><span>✳ MUGI / 001</span></div>
+          <div className="id-card-top"><span>PROFESSIONAL IDENTITY</span><span>✳ MASON / 001</span></div>
           <div className="profile-photo"><img src="/headshot.jpg" alt="Munkhnasan Otgonbold" /></div>
           <div className="profile-identity"><span>THE PERSON BEHIND THE NUMBERS</span><h3>Munkhnasan<br/>Otgonbold</h3><p>Finance & Data Analytics</p></div>
           <div className="id-card-bottom"><span>ARLINGTON, VIRGINIA</span><span>ANALYST · BUILDER</span></div>
