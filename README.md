@@ -1,4 +1,4 @@
-# Hi, I'm Mugi 👋
+# Hi, I'm Mason 👋
 
 **Data Analytics · Business Intelligence · Financial & Operations Analytics**
 
