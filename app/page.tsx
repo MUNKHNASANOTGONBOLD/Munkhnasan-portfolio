@@ -131,6 +131,22 @@ type ProjectEntry = {
 
 const PROJECTS: ProjectEntry[] = [
   {
+    period: "Oct 2026",
+    title: "WMATA DC Bus Operations — Real-Time Analytics",
+    blurb: "Built a Washington, DC bus operations analytics pipeline from WMATA real-time API snapshots through Python and SQLite to SQL route-hour performance metrics and Tableau dashboards. Explored reported deviations and the share of samples over five minutes late.",
+    tags: ["Python", "SQL", "SQLite", "Tableau", "API"],
+    href: "/projects/wmata-bus-operations",
+    image: "/projects/wmata.svg",
+  },
+  {
+    period: "2026",
+    title: "Customer Complaint Analytics",
+    blurb: "An analytics portfolio project focused on understanding customer complaints, investigating patterns, and translating findings into actionable reporting. Project methodology and verified results are being documented.",
+    tags: ["Data Analytics", "Customer Experience", "Reporting"],
+    href: "/projects/customer-complaints",
+    image: "/projects/customer-complaints.svg",
+  },
+  {
     period: "Jan 2026",
     title: "The Anatomy of a World Bank Loan",
     blurb:
@@ -211,6 +227,7 @@ const EDUCATION = [
 ];
 
 const PROFESSIONAL_DEVELOPMENT = [
+  { name: "SQL (Advanced)", org: "HackerRank", date: "2026" },
   { name: "Data Analyst Bootcamp", org: "Advanced SQL, Python & Reporting · Tech2high", date: "2025" },
   { name: "Tableau Desktop I & II", org: "Novelsoft · Tableau Partner", date: "2023" },
   { name: "Microsoft Power BI: Intermediate Level", org: "Power BI Consultant", date: "2023" },
@@ -384,7 +401,7 @@ export default function PreviewPage() {
           <button className="panel-trigger" aria-expanded={selectedProject===i} onClick={()=>setSelectedProject(i)} aria-label={"View "+p.title}><span className="project-num">{String(i+1).padStart(2,"0")}</span><span className="project-vertical">{p.title}</span><span className="project-expand"><Icon name="plus"/></span></button>
           <div className="panel-content" aria-hidden={selectedProject!==i}>
             <div className="project-graphic"><img src={p.image} alt="" loading="lazy"/></div>
-            <div className="project-info"><div className="eyebrow">PROJECT {String(i+1).padStart(2,"0")} / {p.period}</div><h3>{p.title}</h3><p>{p.blurb}</p><div className="tag-row">{p.tags.map(t=><span key={t}>{t}</span>)}</div><a className="pill-btn dark" href={p.href} target="_blank" rel="noopener noreferrer">Read full case study <Icon name="external"/></a></div>
+            <div className="project-info"><div className="eyebrow">PROJECT {String(i+1).padStart(2,"0")} / {p.period}</div><h3>{p.title}</h3><p>{p.blurb}</p><div className="tag-row">{p.tags.map(t=><span key={t}>{t}</span>)}</div><a className="pill-btn dark" href={p.href} target={p.href.startsWith("/") ? undefined : "_blank"} rel={p.href.startsWith("/") ? undefined : "noopener noreferrer"}>Read full case study <Icon name="external"/></a></div>
           </div>
         </article>)}
       </div>
