@@ -135,7 +135,7 @@ const PROJECTS: ProjectEntry[] = [
     title: "WMATA DC Bus Operations — Real-Time Analytics",
     blurb: "Built a Washington, DC bus operations analytics pipeline from WMATA real-time API snapshots through Python and SQLite to SQL route-hour performance metrics and Tableau dashboards. Explored reported deviations and the share of samples over five minutes late.",
     tags: ["Python", "SQL", "SQLite", "Tableau", "API"],
-    href: "/projects/wmata-bus-operations",
+    href: "https://www.linkedin.com/pulse/i-tracked-114-million-bus-gps-records-across-dc-heres-otgonbold-ztrpe/",
     image: "/projects/wmata.svg",
   },
   {
@@ -143,7 +143,7 @@ const PROJECTS: ProjectEntry[] = [
     title: "Customer Complaint Analytics",
     blurb: "An analytics portfolio project focused on understanding customer complaints, investigating patterns, and translating findings into actionable reporting. Project methodology and verified results are being documented.",
     tags: ["Data Analytics", "Customer Experience", "Reporting"],
-    href: "/projects/customer-complaints",
+    href: "https://www.linkedin.com/pulse/after-transaction-what-261392-consumer-complaints-otgonbold-gbrze/",
     image: "/projects/customer-complaints.svg",
   },
   {
