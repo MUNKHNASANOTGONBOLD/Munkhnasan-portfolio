@@ -345,7 +345,6 @@ export default function PreviewPage() {
           <div className="hero-actions">
             <a className="pill-btn dark" href="#work">Explore my work <Icon name="arrow"/></a>
             <a className="pill-btn light" href="#about">Get to know me <span>↓</span></a>
-            <a className="pill-btn light" href="/Munkhnasan-Project-Portfolio.pdf" download="Munkhnasan-Project-Portfolio.pdf" aria-label="Download project portfolio PDF">Download Project Portfolio <span>↓</span></a>
           </div>
         </div>
         <div className="hero-visual" aria-label="Decorative professional portfolio feature">
