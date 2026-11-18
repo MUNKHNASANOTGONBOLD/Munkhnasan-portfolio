@@ -395,13 +395,15 @@ export default function PreviewPage() {
     </section>
     <section id="work" className="section work-section">
       <div className="section-meta reveal"><span>03 / SELECTED WORK</span><span>THE PROJECT ARCHIVE</span></div>
-      <div className="work-heading reveal"><h2 className="section-title">Things I&apos;ve <em>built.</em></h2><p>Real problems. Real data. Practical insights. Select a project to see its story.</p></div>
-      <div className="projects-accordion" aria-label="Interactive projects">
-        {PROJECTS.map((p,i)=><article key={p.title} className={"project-panel "+(selectedProject===i?"expanded":"")}>
-          <button className="panel-trigger" aria-expanded={selectedProject===i} onClick={()=>setSelectedProject(i)} aria-label={"View "+p.title}><span className="project-num">{String(i+1).padStart(2,"0")}</span><span className="project-vertical">{p.title}</span><span className="project-expand"><Icon name="plus"/></span></button>
-          <div className="panel-content" aria-hidden={selectedProject!==i}>
-            <div className="project-graphic"><img src={p.image} alt="" loading="lazy"/></div>
-            <div className="project-info"><div className="eyebrow">PROJECT {String(i+1).padStart(2,"0")} / {p.period}</div><h3>{p.title}</h3><p>{p.blurb}</p><div className="tag-row">{p.tags.map(t=><span key={t}>{t}</span>)}</div><a className="pill-btn dark" href={p.href} target={p.href.startsWith("/") ? undefined : "_blank"} rel={p.href.startsWith("/") ? undefined : "noopener noreferrer"}>Read full case study <Icon name="external"/></a></div>
+      <div className="work-heading reveal"><h2 className="section-title">Things I&apos;ve <em>built.</em></h2><p>Real problems. Real data. Practical insights. Explore all seven projects and their stories.</p></div>
+      <div className="projects-grid" aria-label="Portfolio projects">
+        {PROJECTS.map((p,i)=><article key={p.title} className="project-grid-card">
+          <div className="project-grid-art"><img src={p.image} alt={p.title+" project banner"} loading="lazy"/></div>
+          <div className="project-grid-info">
+            <div className="eyebrow">PROJECT {String(i+1).padStart(2,"0")} / {p.period}</div>
+            <h3>{p.title}</h3><p>{p.blurb}</p>
+            <div className="tag-row">{p.tags.map(t=><span key={t}>{t}</span>)}</div>
+            <a className="pill-btn dark" href={p.href} target={p.href.startsWith("/") ? undefined : "_blank"} rel={p.href.startsWith("/") ? undefined : "noopener noreferrer"}>Read full case study <Icon name="external"/></a>
           </div>
         </article>)}
       </div>
