@@ -14,7 +14,7 @@ const NAV = [
 const METRICS = [
   { label: "Financial records analyzed", value: "1M+", note: "SQL · Python · Advanced Excel" },
   { label: "Megaprojects modeled", value: "24", note: "Cash-flow forecasts · repayment schedules · debt capacity" },
-  { label: "Business proposals developed", value: "300+", note: "Financial modeling · ROI · risk assessment" },
+  { label: "Infrastructure financing supported", value: "~$850M", note: "Municipal funding · budget and debt-service capacity" },
   { label: "Reporting time reduced", value: "83%", note: "Approximately 12 hours reduced to 2 hours" },
 ];
 
@@ -33,7 +33,8 @@ const LEDGER: LedgerEntry[] = [
     org: "Digital Factory",
     type: "Internship",
     lines: [
-      "Analyzed operational and financial data and developed dashboards to support budgeting, forecasting, and process improvement.",
+      "Analyzed operational and financial data with SQL and Python and built Power BI dashboards to identify cost drivers and support budgeting and forecasting.",
+      "Presented dashboard findings and recommended short-term resourcing changes.",
     ],
   },
   {
@@ -42,7 +43,7 @@ const LEDGER: LedgerEntry[] = [
     org: "MDThink",
     type: "Internship",
     lines: [
-      "Validated healthcare datasets using SQL Server and AWS; built Power BI dashboards with 100+ DAX measures and access controls, and automated workflows with Python and SQL.",
+      "Validated healthcare datasets with targeted SQL queries, built Power BI dashboards with 100+ DAX measures and row-level security, and automated weekly reporting workflows with Python and SQL.",
     ],
   },
   {
@@ -51,7 +52,7 @@ const LEDGER: LedgerEntry[] = [
     org: "Trustco Bank",
     type: "Internship",
     lines: [
-      "Analyzed financial and risk data with Python, automated SSIS reporting, and built Tableau KPI dashboards; reconciled Oracle datasets for accurate compliance reporting.",
+      "Analyzed financial and risk data with Python, automated SSIS reporting, and built Tableau KPI dashboards; reconciled Oracle datasets using metadata management and Azure DevOps to resolve discrepancies in compliance reports.",
     ],
   },
   {
@@ -60,6 +61,7 @@ const LEDGER: LedgerEntry[] = [
     org: "Governor's Office of the Capital City — Ulaanbaatar, Mongolia",
     type: "Full-time",
     lines: [
+      "As Secretary of the Capital Raising Working Group, assessed funding needs against municipal budgets and debt-service capacity and helped coordinate approximately $850 million in infrastructure financing.",
       "Built and monitored financial models, cash-flow forecasts, and repayment schedules for Ulaanbaatar's 24-megaproject portfolio; analyzed funding requirements against municipal budgets and debt-service capacity using SQL, Advanced Excel, and Python.",
       "Analyzed on-lending arrangements and repayment obligations for a $95M GCF concessional loan administered through ADB, supporting a program targeting 10,000 affordable, climate-resilient homes.",
       "Prepared financing documentation for a $500M international revenue-backed bond for the Selbe subcenter project; coordinated government approvals, Deutsche Bank, BlackRock, and PIMCO as Secretary of the Capital Raising Working Group.",
@@ -75,6 +77,7 @@ const LEDGER: LedgerEntry[] = [
     lines: [
       "Processed and analyzed more than 1 million financial records across 70+ municipal organizations using SQL, Python, and Advanced Excel; developed Tableau dashboards and automated executive reporting.",
       "Automated financial reporting workflows using SQL, Excel, and Python, reducing preparation time from approximately 12 hours to 2 hours (83%) while improving consistency and accuracy.",
+      "Presented expenditure variances and financial performance, and drafted recommendations for the Mayor, Chief of Staff, and senior municipal officials.",
       "Led reconciliation and resolution of discrepancies across financial datasets, applying governance and data-quality controls to maintain accuracy and compliance.",
       "Analyzed heating, electricity, and water expenditure requirements for 500+ schools, kindergartens, hospitals, and other public institutions.",
     ],
@@ -85,9 +88,9 @@ const LEDGER: LedgerEntry[] = [
     org: "NAMO LLC",
     type: "Full-time",
     lines: [
-      "Managed 3 financial statements with discounted cash flow analysis and internal planning models linked to automation tools that decreased manual administrative tasks by 48%.",
+      "Managed financial statements using internal planning models and automation tools, reducing manual tasks by 48%.",
       "Developed and maintained 20+ financial forecasting and projection models for budgeting, cash-flow planning, expenditure analysis, and financial performance monitoring.",
-      "Established a new forecasting, tracking, and management reporting system that improved the availability and accuracy of financial data, increasing reporting accuracy by 14%.",
+      "Built KPI dashboards to track budget variances and cash flow and presented findings to executives to support budgeting and forecasting decisions.",
     ],
   },
   {
@@ -132,23 +135,23 @@ type ProjectEntry = {
 const PROJECTS: ProjectEntry[] = [
   {
     period: "Oct 2026",
-    title: "WMATA DC Bus Operations — Real-Time Analytics",
-    blurb: "Built a Washington, DC bus operations analytics pipeline from WMATA real-time API snapshots through Python and SQLite to SQL route-hour performance metrics and Tableau dashboards. Explored reported deviations and the share of samples over five minutes late.",
+    title: "WMATA Bus Operations Analytics",
+    blurb: "Built an automated Python and SQLite pipeline for WMATA REST API data and used SQL and Tableau to track bus locations, analyze route performance, and flag schedule deviations of five minutes or more.",
     tags: ["Python", "SQL", "SQLite", "Tableau", "API"],
     href: "https://www.linkedin.com/pulse/i-tracked-114-million-bus-gps-records-across-dc-heres-otgonbold-ztrpe/",
     image: "/projects/wmata.svg",
   },
   {
     period: "2026",
-    title: "Customer Complaint Analytics",
-    blurb: "An analytics portfolio project focused on understanding customer complaints, investigating patterns, and translating findings into actionable reporting. Project methodology and verified results are being documented.",
-    tags: ["Data Analytics", "Customer Experience", "Reporting"],
+    title: "Consumer Complaint Analytics",
+    blurb: "Built an interactive Tableau dashboard covering 261,392 consumer complaints and used LLM-assisted text classification and summarization to identify recurring issues and report complaint trends.",
+    tags: ["Tableau", "KPI Reporting", "Trend Analysis", "Text Classification"],
     href: "https://www.linkedin.com/pulse/after-transaction-what-261392-consumer-complaints-otgonbold-gbrze/",
     image: "/projects/customer-complaints.svg",
   },
   {
     period: "Jan 2026",
-    title: "The Anatomy of a World Bank Loan",
+    title: "World Bank Loan Portfolio Analytics",
     blurb:
       "Modeled the World Bank's public IDA portfolio — 11,404 credits and grants across 131 countries — into a Power BI star schema dashboard for portfolio analysis.",
     tags: ["Python", "Power BI", "DAX"],
@@ -157,7 +160,7 @@ const PROJECTS: ProjectEntry[] = [
   },
   {
     period: "Dec 2025",
-    title: "The SBA Loans I Wrote at a Coffee Shop — 249,000 Rows Later",
+    title: "SBA Loan Portfolio Analytics",
     blurb:
       "Cleaned, mapped, and analyzed 249,000+ real SBA 7(a) loan records end-to-end from Excel through SSIS to a Tableau dashboard.",
     tags: ["SQL Server", "SSIS", "Tableau", "Excel"],
@@ -166,7 +169,7 @@ const PROJECTS: ProjectEntry[] = [
   },
   {
     period: "Nov 2025",
-    title: "The Other Side of the Ledger",
+    title: "Financial Transaction Analytics",
     blurb:
       "Built a full EDA-to-visualization pipeline on 5,002 messy finance transactions, including cleaning, feature engineering, and reporting.",
     tags: ["Python", "pandas", "NumPy", "Matplotlib"],
@@ -177,8 +180,8 @@ const PROJECTS: ProjectEntry[] = [
     period: "2025",
     title: "The Hidden Cost of Healthcare Billing",
     blurb:
-      "Built a multi-layer Snowflake → SSIS → Tableau pipeline analyzing claim denial rates and provider performance.",
-    tags: ["Snowflake", "SSIS", "Tableau"],
+      "Built an ETL workflow with SQL, Snowflake, and SSIS to analyze healthcare claim denials, then visualized provider performance and operational KPIs in Tableau.",
+    tags: ["SQL", "Snowflake", "SSIS", "Tableau"],
     href: "https://www.linkedin.com/pulse/hidden-cost-healthcare-billing-munkhnasan-otgonbold-zlrce/",
     image: "/projects/healthcare.svg",
   },
@@ -204,7 +207,7 @@ const SKILLS = [
   },
   {
     group: "Databases & Cloud",
-    items: ["SQL Server", "Oracle", "Snowflake", "AWS (Redshift, Athena, Glue)"],
+    items: ["SQL Server", "Oracle", "Snowflake", "AWS (Redshift, Athena, Glue)", "SQL Server Data Tools"],
   },
   {
     group: "Governance & Data Quality",
@@ -212,16 +215,16 @@ const SKILLS = [
   },
   {
     group: "Tools & Workflow",
-    items: ["Jira", "Azure DevOps", "Git", "SSIS"],
+    items: ["Jira", "Azure DevOps", "Git", "SSIS", "Alteryx"],
   },
   {
     group: "Finance",
-    items: ["Investment Analysis", "Public Finance", "Project Financing", "Financial Modeling", "DCF & ROI Analysis", "Budgeting", "Forecasting", "Variance Analysis"],
+    items: ["Investment Analysis", "Public Finance", "Project Financing", "Financial Modeling", "Cash Flow Analysis", "DCF & ROI Analysis", "Budgeting", "Forecasting", "Variance Analysis"],
   },
 ];
 
 const EDUCATION = [
-  { degree: "M.S. Data Analytics", org: "University of the Potomac, USA", note: "Jun 2025 – Aug 2027 · GPA 3.89" },
+  { degree: "M.S. Data Analytics, Business Analytics concentration", org: "University of the Potomac, USA", note: "Jun 2025 – Sep 2027 · GPA 3.91" },
   { degree: "MBA, Project Management", org: "University of Finance and Economy, Mongolia", note: "Aug 2021 – Jul 2022 · GPA 3.60" },
   { degree: "BBA, Finance", org: "National University of Mongolia", note: "Sep 2017 – Jun 2021" },
 ];
@@ -364,10 +367,10 @@ export default function PreviewPage() {
       <div className="about-layout">
         <div className="reveal">
           <h2 className="section-title">Hi, I&apos;m <em>Mason.</em></h2>
-          <p className="about-lead">A finance professional with an analyst&apos;s curiosity and a builder&apos;s mindset.</p>
+          <p className="about-lead">M.S. Data Analytics candidate specializing in Business Analytics.</p>
           <div className="body-copy">
-            <p>Over the past 4+ years, I&apos;ve worked across government, institutional finance, infrastructure, and private business, using data to solve financial and operational problems. I enjoy turning complex datasets into clear dashboards, automated reporting, forecasting models, and decision-ready insights.</p>
-            <p>My work sits at the intersection of data analytics, business and financial analytics, and workflow automation. I work with SQL, Python, Power BI, Tableau, Advanced Excel, and cloud data platforms to make reporting more accurate, useful, and efficient.</p>
+            <p>I bring 5+ years of experience across finance, business, and government. My work has included analyzing municipal budgets, validating healthcare data, and building financial forecasts.</p>
+            <p>I use SQL and Python to profile and validate datasets and automate recurring reports. I build Power BI and Tableau dashboards with access controls where needed and apply data quality and metadata practices to help teams rely on the results.</p>
             <p>What interests me most is going beyond what happened to understand why it happened, what others may have overlooked, and what we can do next. I&apos;m especially interested in opportunities across data analytics, business intelligence, financial analytics, and analytics automation.</p>
           </div>
           <div className="about-links"><a href="https://www.linkedin.com/in/munkhnasan-otgonbold-b319b6161" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/MUNKHNASANOTGONBOLD" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://public.tableau.com/app/profile/munkhnasan.otgonbold/vizzes" target="_blank" rel="noreferrer">Tableau Public ↗</a></div>
