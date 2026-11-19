@@ -56,30 +56,15 @@ const LEDGER: LedgerEntry[] = [
     ],
   },
   {
-    period: "Jan 2024 — Jun 2025",
-    role: "Project Financing and Debt Analyst",
+    period: "Apr 2022 — Jun 2025",
+    role: "Budget & Debt Analyst",
     org: "Governor's Office of the Capital City — Ulaanbaatar, Mongolia",
     type: "Full-time",
     lines: [
-      "As Secretary of the Capital Raising Working Group, assessed funding needs against municipal budgets and debt-service capacity and helped coordinate approximately $850 million in infrastructure financing.",
-      "Built and monitored financial models, cash-flow forecasts, and repayment schedules for Ulaanbaatar's 24-megaproject portfolio; analyzed funding requirements against municipal budgets and debt-service capacity using SQL, Advanced Excel, and Python.",
-      "Analyzed on-lending arrangements and repayment obligations for a $95M GCF concessional loan administered through ADB, supporting a program targeting 10,000 affordable, climate-resilient homes.",
-      "Prepared financing documentation for a $500M international revenue-backed bond for the Selbe subcenter project; coordinated government approvals, Deutsche Bank, BlackRock, and PIMCO as Secretary of the Capital Raising Working Group.",
-      "Coordinated financing documentation for an $87.2M battery energy storage project, including $62.2M in commercial financing and $25M in IFC–Canada concessional capital.",
-      "Prepared proposals for approximately $180M in domestic municipal bond issuances supporting energy, wastewater, flood protection, and road projects.",
-    ],
-  },
-  {
-    period: "Apr 2022 — Dec 2023",
-    role: "Budget Analyst",
-    org: "Governor's Office of the Capital City — Ulaanbaatar, Mongolia",
-    type: "Full-time",
-    lines: [
-      "Processed and analyzed more than 1 million financial records across 70+ municipal organizations using SQL, Python, and Advanced Excel; developed Tableau dashboards and automated executive reporting.",
-      "Automated financial reporting workflows using SQL, Excel, and Python, reducing preparation time from approximately 12 hours to 2 hours (83%) while improving consistency and accuracy.",
+      "Analyzed more than 1 million financial records across 70+ municipal organizations using SQL, Python, and advanced Excel, and built Tableau dashboards for executive oversight.",
+      "Automated weekly, monthly, quarterly, and annual financial reporting, cutting preparation time from about 12 hours to 2 hours (83%).",
       "Presented expenditure variances and financial performance, and drafted recommendations for the Mayor, Chief of Staff, and senior municipal officials.",
-      "Led reconciliation and resolution of discrepancies across financial datasets, applying governance and data-quality controls to maintain accuracy and compliance.",
-      "Analyzed heating, electricity, and water expenditure requirements for 500+ schools, kindergartens, hospitals, and other public institutions.",
+      "As Secretary of the Capital Raising Working Group, assessed funding needs for Ulaanbaatar's 24 megaprojects against municipal budgets and debt-service capacity and helped coordinate approximately $850 million in infrastructure financing.",
     ],
   },
   {
@@ -91,34 +76,6 @@ const LEDGER: LedgerEntry[] = [
       "Managed financial statements using internal planning models and automation tools, reducing manual tasks by 48%.",
       "Developed and maintained 20+ financial forecasting and projection models for budgeting, cash-flow planning, expenditure analysis, and financial performance monitoring.",
       "Built KPI dashboards to track budget variances and cash flow and presented findings to executives to support budgeting and forecasting decisions.",
-    ],
-  },
-  {
-    period: "2021 — 2025",
-    role: "Financial Consultant",
-    org: "Time Power Rich LLC",
-    type: "Contract",
-    lines: [
-      "Developed 300+ business and funding proposals using Excel and Python financial models, ROI analysis, and risk assessments across agriculture, construction, manufacturing, finance, and other sectors.",
-      "Mentored 20+ junior analysts in financial modeling, feasibility analysis, and proposal assessment; 10+ mentees subsequently prepared 100+ financing proposals independently.",
-    ],
-  },
-  {
-    period: "2019 — 2020",
-    role: "Co-Founder & Chief Financial Officer",
-    org: "InvestradeMN Corporation",
-    type: "Leadership",
-    lines: [
-      "Co-founded an investment services business and led its financial management and investment service operations.",
-    ],
-  },
-  {
-    period: "2018 — 2019",
-    role: "Founder & President",
-    org: "NUM Startup Club",
-    type: "Leadership",
-    lines: [
-      "Founded and grew a student entrepreneurship club to 200+ members; led 10+ Startup Weekend, Hackathon, and mentorship events reaching 500+ participants.",
     ],
   },
 ];
@@ -224,7 +181,7 @@ const SKILLS = [
 ];
 
 const EDUCATION = [
-  { degree: "M.S. Data Analytics, Business Analytics concentration", org: "University of the Potomac, USA", note: "Jun 2025 – Sep 2027 · GPA 3.91" },
+  { degree: "M.S. in Data Analytics, Business Analytics Concentration", org: "University of the Potomac, USA", note: "Jun 2025 – Sep 2027 · GPA 3.91" },
   { degree: "MBA, Project Management", org: "University of Finance and Economy, Mongolia", note: "Aug 2021 – Jul 2022 · GPA 3.60" },
   { degree: "BBA, Finance", org: "National University of Mongolia", note: "Sep 2017 – Jun 2021" },
 ];
@@ -235,19 +192,11 @@ const PROFESSIONAL_DEVELOPMENT = [
   { name: "Tableau Desktop I & II", org: "Novelsoft · Tableau Partner", date: "2023" },
   { name: "Microsoft Power BI: Intermediate Level", org: "Power BI Consultant", date: "2023" },
   { name: "Project Management", org: "Ganzorig Business School", date: "2022" },
-  { name: "City Finance", org: "World Bank Group · Tokyo Development Learning Center", date: "2025" },
-  { name: "FIDIC 2017 Contracts: Red & Yellow Books", org: "ECV Consultancy · Batbayar & Partners LLP · CCM", date: "2025" },
-  { name: "Green and Sustainability Bonds & Local Debt Management", org: "Ministry of Finance, Mongolia", date: "2024" },
-  { name: "Executive Certificate in E-Governance", org: "University of the Potomac", date: "2024" },
-  { name: "Mobile Payment Development & Application", org: "Ministry of Commerce, China", date: "2023" },
 ];
 
 const AWARDS = [
   { name: "Best Employee Award", org: "Governor's Office of the Capital City", date: "2024" },
-  { name: "Certificate of Honor", org: "Governor of Ulaanbaatar", date: "2023" },
   { name: "Best Graduate Award", org: "National University of Mongolia", date: "2021" },
-  { name: "Second Place — Soybuckthorn Drink", org: "Teacher–Student Startup 2.0 Competition", date: "2019" },
-  { name: "Second Place — Warm Data", org: "Teacher–Student Startup 2.0 Competition", date: "2018" },
 ];
 
 
@@ -434,7 +383,7 @@ export default function PreviewPage() {
       </div>
       <div className="impact-note reveal">
         <h3>Behind every number is a decision.</h3>
-        <p>My municipal financing experience included preparing documentation for a $500M international revenue-backed bond, proposals for approximately $180M in domestic municipal bonds, and coordinating financing documentation for an $87.2M energy storage project. These were collaborative institutional efforts, not independently executed transactions.</p>
+        <p>My municipal financing experience included preparing documentation for a $500M international revenue-backed bond, proposals for approximately $180M in domestic municipal bonds, and coordinating financing documentation for an $87.2M energy storage project. I supported these transactions through financial analysis, documentation, and coordination.</p>
       </div>
       <div className="awards-block"><div className="subhead"><span>RECOGNITION</span><h3>Proud <em>moments.</em></h3></div><div className="award-list">{AWARDS.map((a,i)=><button key={a.name} className="award-row" onClick={()=>setExpandedAward(expandedAward===i?null:i)} aria-expanded={expandedAward===i}><span className="award-index">0{i+1}</span><span className="award-name">{a.name}{expandedAward===i&&<small>{a.org}</small>}</span><span className="award-date">{a.date}</span><span className="award-icon">{expandedAward===i?"−":"＋"}</span></button>)}</div></div>
     </section>
