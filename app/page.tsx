@@ -181,7 +181,7 @@ const SKILLS = [
 ];
 
 const EDUCATION = [
-  { degree: "M.S. in Data Analytics, Business Analytics Concentration", org: "University of the Potomac, USA", note: "Jun 2025 – Sep 2027 · GPA 3.91" },
+  { degree: "M.S. in Data Analytics, Business Analytics Concentration", org: "University of the Potomac, USA", note: "2025 – 2027 · GPA 3.91" },
   { degree: "MBA, Project Management", org: "University of Finance and Economy, Mongolia", note: "Aug 2021 – Jul 2022 · GPA 3.60" },
   { degree: "BBA, Finance", org: "National University of Mongolia", note: "Sep 2017 – Jun 2021" },
 ];
