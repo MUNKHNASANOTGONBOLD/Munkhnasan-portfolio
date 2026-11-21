@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     title,
     description,
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MASON — Finance meets data. Munkhnasan Otgonbold portfolio." }],
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "MASON: Finance meets data. Munkhnasan Otgonbold portfolio." }],
   },
   twitter: {
     card: "summary_large_image",

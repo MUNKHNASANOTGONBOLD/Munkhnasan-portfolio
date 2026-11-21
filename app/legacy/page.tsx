@@ -25,7 +25,7 @@ type LedgerEntry = {
 
 const LEDGER: LedgerEntry[] = [
   {
-    period: "Jul 2026 — Aug 2026",
+    period: "Jul 2026 to Aug 2026",
     role: "Operations Analyst Intern",
     org: "Digital Factory",
     type: "Internship",
@@ -34,7 +34,7 @@ const LEDGER: LedgerEntry[] = [
     ],
   },
   {
-    period: "Jan 2026 — May 2026",
+    period: "Jan 2026 to May 2026",
     role: "Data Analyst Intern",
     org: "MDThink",
     type: "Internship",
@@ -43,7 +43,7 @@ const LEDGER: LedgerEntry[] = [
     ],
   },
   {
-    period: "Oct 2025 — Dec 2025",
+    period: "Oct 2025 to Dec 2025",
     role: "Data Analyst Intern",
     org: "Trustco Bank",
     type: "Internship",
@@ -52,9 +52,9 @@ const LEDGER: LedgerEntry[] = [
     ],
   },
   {
-    period: "Jan 2024 — Jun 2025",
+    period: "Jan 2024 to Jun 2025",
     role: "Project Financing and Debt Analyst",
-    org: "Governor's Office of the Capital City — Ulaanbaatar, Mongolia",
+    org: "Governor's Office of the Capital City, Ulaanbaatar, Mongolia",
     type: "Full-time",
     lines: [
       "Built and monitored financial models, cash-flow forecasts, and repayment schedules for Ulaanbaatar's 24-megaproject portfolio; analyzed funding requirements against municipal budgets and debt-service capacity using SQL, Advanced Excel, and Python.",
@@ -65,9 +65,9 @@ const LEDGER: LedgerEntry[] = [
     ],
   },
   {
-    period: "Apr 2022 — Dec 2023",
+    period: "Apr 2022 to Dec 2023",
     role: "Budget Analyst",
-    org: "Governor's Office of the Capital City — Ulaanbaatar, Mongolia",
+    org: "Governor's Office of the Capital City, Ulaanbaatar, Mongolia",
     type: "Full-time",
     lines: [
       "Processed and analyzed more than 1 million financial records across 70+ municipal organizations using SQL, Python, and Advanced Excel; developed Tableau dashboards and automated executive reporting.",
@@ -77,7 +77,7 @@ const LEDGER: LedgerEntry[] = [
     ],
   },
   {
-    period: "Apr 2021 — Apr 2022",
+    period: "Apr 2021 to Apr 2022",
     role: "Financial and Business Analyst",
     org: "NAMO LLC",
     type: "Full-time",
@@ -88,7 +88,7 @@ const LEDGER: LedgerEntry[] = [
     ],
   },
   {
-    period: "2021 — 2025",
+    period: "2021 to 2025",
     role: "Financial Consultant",
     org: "Time Power Rich LLC",
     type: "Contract",
@@ -98,7 +98,7 @@ const LEDGER: LedgerEntry[] = [
     ],
   },
   {
-    period: "2019 — 2020",
+    period: "2019 to 2020",
     role: "Co-Founder & Chief Financial Officer",
     org: "InvestradeMN Corporation",
     type: "Leadership",
@@ -107,7 +107,7 @@ const LEDGER: LedgerEntry[] = [
     ],
   },
   {
-    period: "2018 — 2019",
+    period: "2018 to 2019",
     role: "Founder & President",
     org: "NUM Startup Club",
     type: "Leadership",
@@ -131,14 +131,14 @@ const PROJECTS: ProjectEntry[] = [
     period: "Jan 2026",
     title: "The Anatomy of a World Bank Loan",
     blurb:
-      "Modeled the World Bank's public IDA portfolio — 11,404 credits and grants across 131 countries — into a Power BI star schema dashboard for portfolio analysis.",
+      "Built a Power BI dashboard with a star schema to analyze 11,404 credits and grants across 131 countries in the World Bank's public IDA portfolio.",
     tags: ["Python", "Power BI", "DAX"],
     href: "https://www.linkedin.com/pulse/anatomy-world-bank-loan-munkhnasan-otgonbold-9ilee/",
     image: "/projects/worldbank.svg",
   },
   {
     period: "Dec 2025",
-    title: "The SBA Loans I Wrote at a Coffee Shop — 249,000 Rows Later",
+    title: "The SBA Loans I Wrote at a Coffee Shop: 249,000 Rows Later",
     blurb:
       "Cleaned, mapped, and analyzed 249,000+ real SBA 7(a) loan records end-to-end from Excel through SSIS to a Tableau dashboard.",
     tags: ["SQL Server", "SSIS", "Tableau", "Excel"],
@@ -223,8 +223,8 @@ const AWARDS = [
   { name: "Best Employee Award", org: "Governor's Office of the Capital City", date: "2024" },
   { name: "Certificate of Honor", org: "Governor of Ulaanbaatar", date: "2023" },
   { name: "Best Graduate Award", org: "National University of Mongolia", date: "2021" },
-  { name: "Second Place — Soybuckthorn Drink", org: "Teacher–Student Startup 2.0 Competition", date: "2019" },
-  { name: "Second Place — Warm Data", org: "Teacher–Student Startup 2.0 Competition", date: "2018" },
+  { name: "Second Place: Soybuckthorn Drink", org: "Teacher–Student Startup 2.0 Competition", date: "2019" },
+  { name: "Second Place: Warm Data", org: "Teacher–Student Startup 2.0 Competition", date: "2018" },
 ];
 
 function LedgerRule() {
@@ -313,7 +313,7 @@ export default function Home() {
             </div>
             <div className="max-w-2xl space-y-4 text-ink/80 leading-relaxed">
               <h2 className="font-serif text-2xl font-semibold text-navy">
-                Hi, I&apos;m Mugi — welcome to my portfolio.
+                Hi, I&apos;m Mugi. Welcome to my portfolio.
               </h2>
               <p>
                 Over the past 4+ years, I&apos;ve worked across government, institutional finance,
@@ -350,7 +350,7 @@ export default function Home() {
             href="#contact"
             className="inline-flex items-center bg-navy text-paper font-mono text-xs uppercase tracking-wider px-5 py-3 hover:bg-navy2 transition-colors"
           >
-            Open Account — Contact
+            Open Account: Contact
           </a>
           <a
             href="#ledger"
@@ -403,7 +403,7 @@ export default function Home() {
       {/* Skills */}
       <section id="holdings" className="mx-auto max-w-5xl px-6 py-14">
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-navy/70 mb-6">
-          05 · Holdings — Skills
+          05 · Holdings: Skills
         </p>
         <div className="grid sm:grid-cols-2 gap-x-10 gap-y-8">
           {SKILLS.map((s) => (
@@ -424,10 +424,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Ledger — experience */}
+      {/* Ledger: experience */}
       <section id="ledger" className="mx-auto max-w-5xl px-6 py-14">
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-navy/70 mb-6">
-          03 · General Ledger — Experience
+          03 · General Ledger: Experience
         </p>
         <div className="border-t border-rule">
           {LEDGER.map((entry) => (
@@ -454,7 +454,7 @@ export default function Home() {
                 <ul className="space-y-1.5">
                   {entry.lines.map((l) => (
                     <li key={l} className="text-sm text-ink/80 leading-relaxed flex gap-2">
-                      <span className="text-gold shrink-0">—</span>
+                      <span className="text-gold shrink-0">·</span>
                       <span>{l}</span>
                     </li>
                   ))}
@@ -468,7 +468,7 @@ export default function Home() {
       {/* Projects */}
       <section id="projects" className="mx-auto max-w-5xl px-6 py-14">
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-navy/70 mb-6">
-          04 · Statements — Projects
+          04 · Statements: Projects
         </p>
         <div className="grid sm:grid-cols-2 gap-6">
           {PROJECTS.map((p) => (
@@ -532,7 +532,7 @@ export default function Home() {
             <ul className="space-y-3">
               {PROFESSIONAL_DEVELOPMENT.map((c) => (
                 <li key={c.name} className="text-sm text-ink/80 flex gap-2">
-                  <span className="text-gold shrink-0">—</span>
+                  <span className="text-gold shrink-0">·</span>
                   <span>
                     {c.name}
                     <span className="block font-mono text-xs text-ink/50 mt-0.5">
@@ -549,7 +549,7 @@ export default function Home() {
           <div className="grid sm:grid-cols-2 gap-x-10 gap-y-3">
             {AWARDS.map((award) => (
               <div key={award.name} className="text-sm text-ink/80 flex gap-2">
-                <span className="text-gold shrink-0">—</span>
+                <span className="text-gold shrink-0">·</span>
                 <span>
                   {award.name}
                   <span className="block font-mono text-xs text-ink/50 mt-0.5">
@@ -578,7 +578,7 @@ export default function Home() {
             </h2>
             <p className="text-ink/70 max-w-lg">
               Looking for data analytics, business analytics, and financial analytics roles.
-              Reach out directly — details below.
+              Reach out directly using the details below.
             </p>
           </div>
           <div>
@@ -656,7 +656,7 @@ export default function Home() {
 
       <footer className="border-t border-rule">
         <div className="mx-auto max-w-5xl px-6 py-6 font-mono text-[11px] text-ink/45 flex justify-between">
-          <span>Munkhnasan Otgonbold — Statement generated {new Date().getFullYear()}</span>
+          <span>Munkhnasan Otgonbold: Statement generated {new Date().getFullYear()}</span>
           <span>Balance carried forward →</span>
         </div>
       </footer>

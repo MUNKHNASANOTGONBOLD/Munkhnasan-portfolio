@@ -4,7 +4,7 @@
 
 I'm Munkhnasan Otgonbold, a finance professional building a career in data analytics. My background spans municipal government, infrastructure financing, private business, and analytics internships in the United States. I'm currently pursuing an **M.S. in Data Analytics at the University of the Potomac** and based in **Arlington, Virginia**.
 
-I enjoy making messy data useful — whether that means finding a reporting discrepancy, building a dashboard people can actually use, or automating a task that used to take hours. My finance background helps me connect the numbers to the business decisions behind them.
+I enjoy making messy data useful, whether that means finding a reporting discrepancy, building a dashboard people can actually use, or automating a task that used to take hours. My finance background helps me connect the numbers to the business decisions behind them.
 
 [🌐 Explore my portfolio](https://munkhnasan-portfolio.vercel.app/) · [💼 LinkedIn](https://www.linkedin.com/in/munkhnasan-otgonbold-b319b6161) · [📊 Tableau Dashboards](https://public.tableau.com/app/profile/munkhnasan.otgonbold/vizzes) · [📄 Resume](https://munkhnasan-portfolio.vercel.app/Munkhnasan-Otgonbold-Resume.pdf)
 
@@ -21,7 +21,7 @@ I enjoy making messy data useful — whether that means finding a reporting disc
 ## 📊 Experience in Numbers
 
 - Analyzed **1M+ financial records** across **70+ municipal organizations**.
-- Reduced reporting preparation from approximately **12 hours to 2 hours — an 83% reduction**.
+- Reduced reporting preparation from approximately **12 hours to 2 hours** (an **83% reduction**).
 - Built and monitored financial models for a **24-megaproject portfolio** in Ulaanbaatar.
 - Developed **300+ business and funding proposals** across multiple industries.
 - Built Power BI dashboards with **100+ DAX measures** during my data analytics internship.

@@ -28,7 +28,7 @@ type LedgerEntry = {
 
 const LEDGER: LedgerEntry[] = [
   {
-    period: "Jul 2026 — Aug 2026",
+    period: "Jul 2026 to Aug 2026",
     role: "Operations Analyst Intern",
     org: "Digital Factory",
     type: "Internship",
@@ -38,7 +38,7 @@ const LEDGER: LedgerEntry[] = [
     ],
   },
   {
-    period: "Jan 2026 — May 2026",
+    period: "Jan 2026 to May 2026",
     role: "Data Analyst Intern",
     org: "MDThink",
     type: "Internship",
@@ -47,7 +47,7 @@ const LEDGER: LedgerEntry[] = [
     ],
   },
   {
-    period: "Oct 2025 — Dec 2025",
+    period: "Oct 2025 to Dec 2025",
     role: "Data Analyst Intern",
     org: "Trustco Bank",
     type: "Internship",
@@ -56,9 +56,9 @@ const LEDGER: LedgerEntry[] = [
     ],
   },
   {
-    period: "Apr 2022 — Jun 2025",
+    period: "Apr 2022 to Jun 2025",
     role: "Budget & Debt Analyst",
-    org: "Governor's Office of the Capital City — Ulaanbaatar, Mongolia",
+    org: "Governor's Office of the Capital City, Ulaanbaatar, Mongolia",
     type: "Full-time",
     lines: [
       "Analyzed more than 1 million financial records across 70+ municipal organizations using SQL, Python, and advanced Excel, and built Tableau dashboards for executive oversight.",
@@ -68,7 +68,7 @@ const LEDGER: LedgerEntry[] = [
     ],
   },
   {
-    period: "Apr 2021 — Apr 2022",
+    period: "Apr 2021 to Apr 2022",
     role: "Financial and Business Analyst",
     org: "NAMO LLC",
     type: "Full-time",
@@ -110,7 +110,7 @@ const PROJECTS: ProjectEntry[] = [
     period: "Jan 2026",
     title: "World Bank Loan Portfolio Analytics",
     blurb:
-      "Modeled the World Bank's public IDA portfolio — 11,404 credits and grants across 131 countries — into a Power BI star schema dashboard for portfolio analysis.",
+      "Built a Power BI dashboard with a star schema to analyze 11,404 credits and grants across 131 countries in the World Bank's public IDA portfolio.",
     tags: ["Python", "Power BI", "DAX"],
     href: "https://www.linkedin.com/pulse/anatomy-world-bank-loan-munkhnasan-otgonbold-9ilee/",
     image: "/projects/worldbank.svg",
@@ -280,7 +280,7 @@ export default function PreviewPage() {
   return <main className="mugi-v2" id="top">
     <div className="grain" aria-hidden="true" />
     <header className="nav-shell">
-      <a className="brand" href="#top" aria-label="Mason — back to top">MAS<span className="brand-star">✳</span>N<span className="brand-dot">.</span></a>
+      <a className="brand" href="#top" aria-label="Mason, back to top">MAS<span className="brand-star">✳</span>N<span className="brand-dot">.</span></a>
       <nav className={"floating-nav "+(menu?"nav-open":"")} aria-label="Main navigation">
         {anchors.map(([id,label]) => <a key={id} href={"#"+id} className={active===id?"current":""} onClick={()=>setMenu(false)}>{label}</a>)}
       </nav>
@@ -293,7 +293,7 @@ export default function PreviewPage() {
         <div className="hero-copy">
           <div className="eyebrow">FINANCE × DATA × IMPACT</div>
           <h1 id="hero-title">Numbers<br/>tell <em>stories.</em><br/>I find the <span>why.</span></h1>
-          <p className="hero-sub">Hi, I&apos;m <strong>Mason.</strong> I turn complex financial and operational data into decisions that matter—through analytics, automation, and clear visual storytelling.</p>
+          <p className="hero-sub">Hi, I&apos;m <strong>Mason.</strong> I turn complex financial and operational data into clear guidance for decision-makers using analytics, automation, and visual reporting.</p>
           <div className="hero-actions">
             <a className="pill-btn dark" href="#work">Explore my work <Icon name="arrow"/></a>
             <a className="pill-btn light" href="#about">Get to know me <span>↓</span></a>

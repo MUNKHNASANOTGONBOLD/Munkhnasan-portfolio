@@ -28,7 +28,7 @@ type LedgerEntry = {
 
 const LEDGER: LedgerEntry[] = [
   {
-    period: "Jul 2026 — Aug 2026",
+    period: "Jul 2026 to Aug 2026",
     role: "Operations Analyst Intern",
     org: "Digital Factory",
     type: "Internship",
@@ -37,7 +37,7 @@ const LEDGER: LedgerEntry[] = [
     ],
   },
   {
-    period: "Jan 2026 — May 2026",
+    period: "Jan 2026 to May 2026",
     role: "Data Analyst Intern",
     org: "MDThink",
     type: "Internship",
@@ -46,7 +46,7 @@ const LEDGER: LedgerEntry[] = [
     ],
   },
   {
-    period: "Oct 2025 — Dec 2025",
+    period: "Oct 2025 to Dec 2025",
     role: "Data Analyst Intern",
     org: "Trustco Bank",
     type: "Internship",
@@ -55,9 +55,9 @@ const LEDGER: LedgerEntry[] = [
     ],
   },
   {
-    period: "Jan 2024 — Jun 2025",
+    period: "Jan 2024 to Jun 2025",
     role: "Project Financing and Debt Analyst",
-    org: "Governor's Office of the Capital City — Ulaanbaatar, Mongolia",
+    org: "Governor's Office of the Capital City, Ulaanbaatar, Mongolia",
     type: "Full-time",
     lines: [
       "Built and monitored financial models, cash-flow forecasts, and repayment schedules for Ulaanbaatar's 24-megaproject portfolio; analyzed funding requirements against municipal budgets and debt-service capacity using SQL, Advanced Excel, and Python.",
@@ -68,9 +68,9 @@ const LEDGER: LedgerEntry[] = [
     ],
   },
   {
-    period: "Apr 2022 — Dec 2023",
+    period: "Apr 2022 to Dec 2023",
     role: "Budget Analyst",
-    org: "Governor's Office of the Capital City — Ulaanbaatar, Mongolia",
+    org: "Governor's Office of the Capital City, Ulaanbaatar, Mongolia",
     type: "Full-time",
     lines: [
       "Processed and analyzed more than 1 million financial records across 70+ municipal organizations using SQL, Python, and Advanced Excel; developed Tableau dashboards and automated executive reporting.",
@@ -80,7 +80,7 @@ const LEDGER: LedgerEntry[] = [
     ],
   },
   {
-    period: "Apr 2021 — Apr 2022",
+    period: "Apr 2021 to Apr 2022",
     role: "Financial and Business Analyst",
     org: "NAMO LLC",
     type: "Full-time",
@@ -91,7 +91,7 @@ const LEDGER: LedgerEntry[] = [
     ],
   },
   {
-    period: "2021 — 2025",
+    period: "2021 to 2025",
     role: "Financial Consultant",
     org: "Time Power Rich LLC",
     type: "Contract",
@@ -101,7 +101,7 @@ const LEDGER: LedgerEntry[] = [
     ],
   },
   {
-    period: "2019 — 2020",
+    period: "2019 to 2020",
     role: "Co-Founder & Chief Financial Officer",
     org: "InvestradeMN Corporation",
     type: "Leadership",
@@ -110,7 +110,7 @@ const LEDGER: LedgerEntry[] = [
     ],
   },
   {
-    period: "2018 — 2019",
+    period: "2018 to 2019",
     role: "Founder & President",
     org: "NUM Startup Club",
     type: "Leadership",
@@ -134,14 +134,14 @@ const PROJECTS: ProjectEntry[] = [
     period: "Jan 2026",
     title: "The Anatomy of a World Bank Loan",
     blurb:
-      "Modeled the World Bank's public IDA portfolio — 11,404 credits and grants across 131 countries — into a Power BI star schema dashboard for portfolio analysis.",
+      "Built a Power BI dashboard with a star schema to analyze 11,404 credits and grants across 131 countries in the World Bank's public IDA portfolio.",
     tags: ["Python", "Power BI", "DAX"],
     href: "https://www.linkedin.com/pulse/anatomy-world-bank-loan-munkhnasan-otgonbold-9ilee/",
     image: "/projects/worldbank.svg",
   },
   {
     period: "Dec 2025",
-    title: "The SBA Loans I Wrote at a Coffee Shop — 249,000 Rows Later",
+    title: "The SBA Loans I Wrote at a Coffee Shop: 249,000 Rows Later",
     blurb:
       "Cleaned, mapped, and analyzed 249,000+ real SBA 7(a) loan records end-to-end from Excel through SSIS to a Tableau dashboard.",
     tags: ["SQL Server", "SSIS", "Tableau", "Excel"],
@@ -226,8 +226,8 @@ const AWARDS = [
   { name: "Best Employee Award", org: "Governor's Office of the Capital City", date: "2024" },
   { name: "Certificate of Honor", org: "Governor of Ulaanbaatar", date: "2023" },
   { name: "Best Graduate Award", org: "National University of Mongolia", date: "2021" },
-  { name: "Second Place — Soybuckthorn Drink", org: "Teacher–Student Startup 2.0 Competition", date: "2019" },
-  { name: "Second Place — Warm Data", org: "Teacher–Student Startup 2.0 Competition", date: "2018" },
+  { name: "Second Place: Soybuckthorn Drink", org: "Teacher–Student Startup 2.0 Competition", date: "2019" },
+  { name: "Second Place: Warm Data", org: "Teacher–Student Startup 2.0 Competition", date: "2018" },
 ];
 
 
@@ -311,7 +311,7 @@ export default function PreviewPage() {
   return <main className="mugi-v2" id="top">
     <div className="grain" aria-hidden="true" />
     <header className="nav-shell">
-      <a className="brand" href="#top" aria-label="Mason — back to top">MAS<span className="brand-star">✳</span>N<span className="brand-dot">.</span></a>
+      <a className="brand" href="#top" aria-label="Mason, back to top">MAS<span className="brand-star">✳</span>N<span className="brand-dot">.</span></a>
       <nav className={"floating-nav "+(menu?"nav-open":"")} aria-label="Main navigation">
         {anchors.map(([id,label]) => <a key={id} href={"#"+id} className={active===id?"current":""} onClick={()=>setMenu(false)}>{label}</a>)}
       </nav>
@@ -324,7 +324,7 @@ export default function PreviewPage() {
         <div className="hero-copy">
           <div className="eyebrow">FINANCE × DATA × IMPACT</div>
           <h1 id="hero-title">Numbers<br/>tell <em>stories.</em><br/>I find the <span>why.</span></h1>
-          <p className="hero-sub">Hi, I&apos;m <strong>Mason.</strong> I turn complex financial and operational data into decisions that matter—through analytics, automation, and clear visual storytelling.</p>
+          <p className="hero-sub">Hi, I&apos;m <strong>Mason.</strong> I turn complex financial and operational data into clear guidance for decision-makers using analytics, automation, and visual reporting.</p>
           <div className="hero-actions">
             <a className="pill-btn dark" href="#work">Explore my work <Icon name="arrow"/></a>
             <a className="pill-btn light" href="#about">Get to know me <span>↓</span></a>

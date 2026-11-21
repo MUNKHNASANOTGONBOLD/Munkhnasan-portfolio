@@ -1,4 +1,4 @@
-# Migration checklist — Editorial Intelligence 2.0
+# Migration checklist: Editorial Intelligence 2.0
 
 Status: planning; production remains unchanged.
 
