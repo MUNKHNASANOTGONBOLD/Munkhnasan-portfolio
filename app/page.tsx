@@ -93,7 +93,7 @@ const PROJECTS: ProjectEntry[] = [
   {
     period: "Oct 2026",
     title: "WMATA Bus Operations Analytics",
-    blurb: "Built an automated Python and SQLite pipeline for WMATA REST API data and used SQL and Tableau to track bus locations, analyze route performance, and flag schedule deviations of five minutes or more.",
+    blurb: "I collected 1,143,917 GPS observations in about 24.7 hours and used SQL to select 20,261 samples for comparing reported schedule deviations by route and hour.",
     tags: ["Python", "SQL", "SQLite", "Tableau", "API"],
     href: "https://www.linkedin.com/pulse/i-tracked-114-million-bus-gps-records-across-dc-heres-otgonbold-ztrpe/",
     image: "/projects/wmata.svg",
@@ -101,7 +101,7 @@ const PROJECTS: ProjectEntry[] = [
   {
     period: "2026",
     title: "Consumer Complaint Analytics",
-    blurb: "Built an interactive Tableau dashboard covering 261,392 consumer complaints and used LLM-assisted text classification and summarization to identify recurring issues and report complaint trends.",
+    blurb: "I explored 261,392 consumer complaints in Tableau and used LLM-assisted text classification and summarization to identify recurring issues.",
     tags: ["Tableau", "KPI Reporting", "Trend Analysis", "Text Classification"],
     href: "https://www.linkedin.com/pulse/after-transaction-what-261392-consumer-complaints-otgonbold-gbrze/",
     image: "/projects/customer-complaints.svg",
@@ -110,7 +110,7 @@ const PROJECTS: ProjectEntry[] = [
     period: "Jan 2026",
     title: "World Bank Loan Portfolio Analytics",
     blurb:
-      "Built a Power BI dashboard with a star schema to analyze 11,404 credits and grants across 131 countries in the World Bank's public IDA portfolio.",
+      "I cleaned 11,404 IDA financing records across 131 countries and built a Power BI-ready star schema, an Excel model workbook, and HTML dashboard prototypes.",
     tags: ["Python", "Power BI", "DAX"],
     href: "https://www.linkedin.com/pulse/anatomy-world-bank-loan-munkhnasan-otgonbold-9ilee/",
     image: "/projects/worldbank.svg",
@@ -119,7 +119,7 @@ const PROJECTS: ProjectEntry[] = [
     period: "Dec 2025",
     title: "SBA Loan Portfolio Analytics",
     blurb:
-      "Cleaned, mapped, and analyzed 249,000+ real SBA 7(a) loan records end-to-end from Excel through SSIS to a Tableau dashboard.",
+      "My team analyzed about 249,000 public SBA loan records. We mapped the source fields and wrote SQL to compare approvals by lender, district, industry, and fiscal year.",
     tags: ["SQL Server", "SSIS", "Tableau", "Excel"],
     href: "https://www.linkedin.com/pulse/sba-loans-i-wrote-coffee-shop-ended-249000-rows-munkhnasan-otgonbold-yg8te/",
     image: "/projects/sba.svg",
@@ -128,7 +128,7 @@ const PROJECTS: ProjectEntry[] = [
     period: "Nov 2025",
     title: "Financial Transaction Analytics",
     blurb:
-      "Built a full EDA-to-visualization pipeline on 5,002 messy finance transactions, including cleaning, feature engineering, and reporting.",
+      "I cleaned 5,002 synthetic practice transactions in pandas, calculated net amounts and fee percentages, and charted the results in a Jupyter notebook.",
     tags: ["Python", "pandas", "NumPy", "Matplotlib"],
     href: "https://www.linkedin.com/pulse/other-side-ledger-what-customer-data-looks-like-munkhnasan-otgonbold-1kste/",
     image: "/projects/ledger.svg",
@@ -137,7 +137,7 @@ const PROJECTS: ProjectEntry[] = [
     period: "2025",
     title: "The Hidden Cost of Healthcare Billing",
     blurb:
-      "Built an ETL workflow with SQL, Snowflake, and SSIS to analyze healthcare claim denials, then visualized provider performance and operational KPIs in Tableau.",
+      "I used Snowflake SQL to check a healthcare billing practice dataset and prepared Tableau views for claims, appointments, and prior authorizations.",
     tags: ["SQL", "Snowflake", "SSIS", "Tableau"],
     href: "https://www.linkedin.com/pulse/hidden-cost-healthcare-billing-munkhnasan-otgonbold-zlrce/",
     image: "/projects/healthcare.svg",
@@ -146,7 +146,7 @@ const PROJECTS: ProjectEntry[] = [
     period: "Feb 2026",
     title: "IFC Investment Services Projects",
     blurb:
-      "Analyzed 7,083 IFC private-sector investment disclosures across 172 countries and 26 original columns, evaluating project structures, financial products, and country distribution.",
+      "I cleaned 7,083 public IFC disclosures covering 172 countries and built an HTML dashboard to explore investment instruments, industries, and geography.",
     tags: ["Excel", "Python", "SQL"],
     href: "https://www.linkedin.com/pulse/ifc-investment-services-projects-munkhnasan-otgonbold-b878e/",
     image: "/projects/ifc.svg",
@@ -292,8 +292,8 @@ export default function PreviewPage() {
       <div className="hero-main">
         <div className="hero-copy">
           <div className="eyebrow">FINANCE × DATA × IMPACT</div>
-          <h1 id="hero-title">Numbers<br/>tell <em>stories.</em><br/>I find the <span>why.</span></h1>
-          <p className="hero-sub">Hi, I&apos;m <strong>Mason.</strong> I turn complex financial and operational data into clear guidance for decision-makers using analytics, automation, and visual reporting.</p>
+          <h1 id="hero-title">Data analyst<br/>with a background<br/>in <em>municipal finance.</em></h1>
+          <p className="hero-sub">Hi, I&apos;m <strong>Mason.</strong> I’ve analyzed data since my first finance role. I use SQL, Python, Power BI, and Tableau to check data, automate reports, and explain what changed.</p>
           <div className="hero-actions">
             <a className="pill-btn dark" href="#work">Explore my work <Icon name="arrow"/></a>
             <a className="pill-btn light" href="#about">Get to know me <span>↓</span></a>
@@ -318,9 +318,9 @@ export default function PreviewPage() {
           <h2 className="section-title">Hi, I&apos;m <em>Mason.</em></h2>
           <p className="about-lead">M.S. Data Analytics candidate specializing in Business Analytics.</p>
           <div className="body-copy">
-            <p>I bring 5+ years of experience across finance, business, and government. My work has included analyzing municipal budgets, validating healthcare data, and building financial forecasts.</p>
+            <p>At NAMO, I analyzed budget variances and cash flow, built forecasts, and presented KPI dashboards to executives. In Ulaanbaatar’s municipal government, I analyzed more than a million financial records and cut recurring report preparation from about 12 hours to two.</p>
             <p>I use SQL and Python to profile and validate datasets and automate recurring reports. I build Power BI and Tableau dashboards with access controls where needed and apply data quality and metadata practices to help teams rely on the results.</p>
-            <p>What interests me most is going beyond what happened to understand why it happened, what others may have overlooked, and what we can do next. I&apos;m especially interested in opportunities across data analytics, business intelligence, financial analytics, and analytics automation.</p>
+            <p>I’m looking for internships in data analytics, BI and reporting, or financial analytics.</p>
           </div>
           <div className="about-links"><a href="https://www.linkedin.com/in/munkhnasan-otgonbold-b319b6161" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/MUNKHNASANOTGONBOLD" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://public.tableau.com/app/profile/munkhnasan.otgonbold/vizzes" target="_blank" rel="noreferrer">Tableau Public ↗</a></div>
         </div>
@@ -334,7 +334,7 @@ export default function PreviewPage() {
     </section>
     <section id="skills" className="section skills-section">
       <div className="section-meta reveal"><span>02 / MY TOOLKIT</span><span>SKILLS & CAPABILITIES</span></div>
-      <div className="skills-heading reveal"><h2 className="section-title">Built on <em>curiosity.</em></h2><p>Explore my technical toolkit. Select a skill to see where it shows up in my work.</p></div>
+      <div className="skills-heading reveal"><h2 className="section-title">Tools I <em>use</em></h2><p>Choose a skill to see where I’ve used it.</p></div>
       <div className="filter-row" role="group" aria-label="Filter skills by category">
         {categories.map(c=><button key={c} className={"filter-chip "+(c===skillCategory?"selected":"")} onClick={()=>{setSkillCategory(c);setSelectedSkill(null)}} aria-pressed={c===skillCategory}>{c}</button>)}
       </div>
@@ -347,7 +347,7 @@ export default function PreviewPage() {
     </section>
     <section id="work" className="section work-section">
       <div className="section-meta reveal"><span>03 / SELECTED WORK</span><span>THE PROJECT ARCHIVE</span></div>
-      <div className="work-heading reveal"><h2 className="section-title">Things I&apos;ve <em>built.</em></h2><p>Real problems. Real data. Practical insights. Explore all seven projects and their stories.</p></div>
+      <div className="work-heading reveal"><h2 className="section-title">Selected <em>projects</em></h2><p>Open a case study for the data source, methods, and findings.</p></div>
       <div className="projects-grid" aria-label="Portfolio projects">
         {PROJECTS.map((p,i)=><article key={p.title} className="project-grid-card">
           <div className="project-grid-art"><img src={p.image} alt={p.title+" project banner"} loading="lazy"/></div>
@@ -363,7 +363,7 @@ export default function PreviewPage() {
     </section>
     <section id="experience" className="section experience-section">
       <div className="section-meta reveal"><span>04 / CAREER JOURNEY</span><span>EXPERIENCE</span></div>
-      <h2 className="section-title reveal">The journey <em>so far.</em></h2>
+      <h2 className="section-title reveal">Work <em>experience</em></h2>
       <p className="section-intro reveal">From investment decisions to operational intelligence. Select any role to expand its complete description.</p>
       <div className="timeline">
         {LEDGER.map((e,i)=>{const open=expandedExperience.includes(i);return <article className="timeline-entry reveal" key={e.period+e.org+e.role}>
@@ -377,7 +377,7 @@ export default function PreviewPage() {
     </section>
     <section id="achievements" className="section achievement-section">
       <div className="section-meta reveal"><span>05 / IMPACT IN NUMBERS</span><span>ACHIEVEMENTS</span></div>
-      <h2 className="section-title reveal">Impact, <em>measured.</em></h2>
+      <h2 className="section-title reveal">Results from <em>my work</em></h2>
       <div className="achievement-grid">
         {METRICS.map((m,i)=><div key={m.label} className="metric-card reveal"><span className="metric-index">0{i+1} / 04</span><div className="metric-number"><Counter text={m.value}/></div><h3>{m.label}</h3><p>{m.note}</p></div>)}
       </div>
