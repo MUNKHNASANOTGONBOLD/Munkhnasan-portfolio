@@ -292,7 +292,7 @@ export default function PreviewPage() {
       <div className="hero-main">
         <div className="hero-copy">
           <div className="eyebrow">FINANCE × DATA × IMPACT</div>
-          <h1 id="hero-title">Data analyst<br/>with a background<br/>in <em>municipal finance.</em></h1>
+          <h1 id="hero-title">Data analyst with <em>experience across finance, healthcare, business, and government.</em></h1>
           <p className="hero-sub">Hi, I&apos;m <strong>Mason.</strong> I’ve analyzed data since my first finance role. I use SQL, Python, Power BI, and Tableau to check data, automate reports, and explain what changed.</p>
           <div className="hero-actions">
             <a className="pill-btn dark" href="#work">Explore my work <Icon name="arrow"/></a>
